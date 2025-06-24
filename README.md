@@ -111,7 +111,7 @@ This project is based on and inspired by the work of [Hugo ChunHo Lin (1chooo)](
 
 ## 📬 Contact
 
-- **Portfolio**: [Your Portfolio URL]
+- **Portfolio**: [byabasaija.com](https://byabasaija.com)
 - **LinkedIn**: [Pascal Byabasaija](https://www.linkedin.com/in/pascal-byabasaija/)
 - **Email**: basaijapascal9@gmail.com
 - **GitHub**: [@Byabasaija](https://github.com/Byabasaija)
