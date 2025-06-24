@@ -31,8 +31,8 @@ Welcome to my personal portfolio! I am Pascal Byabasaija, a passionate Full-Stac
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Byabasaija/vcard_portfolio.git
-cd vcard_portfolio
+git clone https://github.com/Byabasaija/portfolio.git
+cd portfolio
 ```
 
 2. Install dependencies:
