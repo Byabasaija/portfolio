@@ -250,7 +250,7 @@ delivering user-centric software products. 🚀
           company: "Microverse Inc",
           location: "San Fransinco, CA",
           role: "Fullstack Software Development",
-          duration: "Mar. 2020 - Oct. 2020 ",
+          duration: "2020 - 2021",
           tasksMarkdown: `
 - **Dedicated over 1,500 hours to mastering web development** remotely,
 collaborating with a global community of software developers.
@@ -266,7 +266,7 @@ develop over 5 practical, production-ready applications.
           company: "Ndejje University",
           location: "Kampala, Uganda",
           role: "Bachelors in Information Technology",
-          duration: "Aug. 2020 — Oct. 2023",
+          duration: "2020 — 2023",
           tasksMarkdown: `
 - **Coursework included programming in:** C++ and PHP, Database and System
 administration, Operating systems, Project management, Communication
@@ -285,7 +285,7 @@ skills, Research methods etc.
           company: "Dissimilar Media(formerly Backlink Africa)",
           location: "Kampala, Uganda",
           role: "Fullstack Software Engineer",
-          duration: "May. 2024 - Present",
+          duration: "2024 - Present",
           tasksMarkdown: `
 - Built and deployed Monetize 54 using Next.js 14, FastAPI, and MongoDB.
 - Integrated PayPal, increasing transactions by 20%.
@@ -299,7 +299,7 @@ cross-sell metrics.
           company: "Mara Scientific",
           location: "Kampala, Uganda",
           role: "Fullstack Software Engineer & Project Lead",
-          duration: "Dec 2021 - March. 2024",
+          duration: "2021 - 2024",
           tasksMarkdown: `
 -  Promoted to lead developer team of 6 on Mpeke HMIS project after stepping up to mediate a misunderstanding between a client, sales and engineering teams about the project deliverables.
 - Consequently, speeded up feature delivery by 38% and reduced bugs by 30%.

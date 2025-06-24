@@ -265,7 +265,7 @@ delivering user-centric software products. 🚀
             company: "Microverse Inc",
             location: "San Fransinco, CA",
             role: "Fullstack Software Development",
-            duration: "Mar. 2020 - Oct. 2020 ",
+            duration: "2020 - 2020 ",
             tasksMarkdown: `
   - **Dedicated over 1,500 hours to mastering web development** remotely,
   collaborating with a global community of software developers.
@@ -281,7 +281,7 @@ delivering user-centric software products. 🚀
             company: "Ndejje University",
             location: "Kampala, Uganda",
             role: "Bachelors in Information Technology",
-            duration: "Aug. 2020 — Oct. 2023",
+            duration: "2020 — 2023",
             tasksMarkdown: `
   - **Coursework included programming in:** C++ and PHP, Database and System
   administration, Operating systems, Project management, Communication
@@ -300,7 +300,7 @@ delivering user-centric software products. 🚀
             company: "Dissimilar Media(formerly Backlink Africa)",
             location: "Kampala, Uganda",
             role: "Fullstack Software Engineer",
-            duration: "May. 2024 - Present",
+            duration: "2024 - Present",
             tasksMarkdown: `
   - Built and deployed Monetize 54 using Next.js 14, FastAPI, and MongoDB.
   - Integrated PayPal payments into Monetize 54, enabling secure and seamless transactions for users and contributing to a 20% increase in successful payment processing within the first quarter.
@@ -314,7 +314,7 @@ delivering user-centric software products. 🚀
             company: "Mara Scientific",
             location: "Kampala, Uganda",
             role: "Project Lead",
-            duration: "Oct 2023 - March. 2024",
+            duration: "2023 - 2024",
             tasksMarkdown: `
   - Was promoted to Project Lead after resolving a critical project delay, successfully mediating between client, management, and engineering teams, resulting in a 60% improvement in delivery times.
   - Collaborated with the DevOps team to increase system uptime from 60% to 90% by optimizing infrastructure and scaling systems to handle increased demand and traffic.
@@ -328,7 +328,7 @@ delivering user-centric software products. 🚀
             company: "Mara Scientific",
             location: "Kampala, Uganda",
             role: "Fullstack Software Engineer",
-            duration: "Nov. 2020 - Oct. 2023",
+            duration: "2020 - 2023",
             tasksMarkdown: `
   - Spearheaded the development of intuitive user interfaces for healthcare applications using React, resulting in a 40% improvement in user satisfaction ratings from medical professionals interacting with the systems.
   - Transitioned to Full-Stack Developer by quickly learning Python and Flask, bridging frontend and backend teams and ensuring smooth project progression, reducing feature completion time by 40%.
