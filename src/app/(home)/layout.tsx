@@ -8,6 +8,7 @@ import SideBar from "@/components/layout/side-bar";
 import Hello from "@/components/hello";
 import { ProgressBar } from "@/components/progress-bar";
 import { WebVitals } from "@/components/web-vitals";
+import ChatWidget from "@/components/chat-widget";
 import config from "@/config";
 
 import type { Metadata } from "next";
@@ -59,6 +60,7 @@ function HomeLayout({ children }: { readonly children: React.ReactNode }) {
             </div>
           </main>
         </ProgressBar>
+        <ChatWidget />
         <Script
           id="application/ld+json"
           type="application/ld+json"
