@@ -8,7 +8,7 @@ import SideBar from "@/components/layout/side-bar";
 import Hello from "@/components/hello";
 import { ProgressBar } from "@/components/progress-bar";
 import { WebVitals } from "@/components/web-vitals";
-import ChatWidget from "@/components/chat-widget";
+import ChatWidget from "@/components/chat-widget-new";
 import config from "@/config";
 
 import type { Metadata } from "next";

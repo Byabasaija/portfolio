@@ -64,6 +64,7 @@ const config: Partial<Config> = {
         "marquee-left": "marquee-left var(--duration, 30s) linear infinite",
         "marquee-up": "marquee-up var(--duration, 30s) linear infinite",
         rainbow: "rainbow var(--speed, 2s) infinite linear",
+        heartbeat: "heartbeat 2s ease-in-out infinite",
       },
       keyframes: {
         "shiny-text": {
