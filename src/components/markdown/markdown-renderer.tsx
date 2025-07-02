@@ -21,7 +21,7 @@ interface MarkdownRendererProps {
 function MarkdownRenderer({ className, content }: MarkdownRendererProps) {
   return (
     <ReactMarkdown
-      className={className}
+      className={`markdown-renderer ${className ?? ""}`}
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw, rehypeGithubAlerts]}
       components={{

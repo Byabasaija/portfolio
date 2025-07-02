@@ -69,3 +69,26 @@
 .markdown-alert-caution .markdown-alert-title {
     color: var(--github-alert-caution-color);
 }
+
+.markdown-renderer table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: #e0e0e0; /* Light gray text for dark background */
+}
+
+.markdown-renderer th,
+.markdown-renderer td {
+  border: 1px solid #333; /* Dark border for subtle separation */
+  padding: 0.5rem;
+  text-align: left;
+  vertical-align: top;
+  background-color: #1e1e1e; /* Slightly lighter than page background */
+}
+
+.markdown-renderer thead {
+  background-color: #2a2a2a; /* Slightly different from tbody for contrast */
+  font-weight: bold;
+}
+
