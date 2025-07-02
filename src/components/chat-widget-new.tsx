@@ -80,9 +80,9 @@ export default function ChatWidget() {
           setSupportAgentOnline(data.online);
           
           if (data.online) {
-            addSystemMessage("Support agent is online! Feel free to ask any questions.");
+            addSystemMessage("Pascal is online! Feel free to ask any questions.");
           } else {
-            addSystemMessage("Support agent is currently offline. Please leave your email and we'll get back to you soon.");
+            addSystemMessage("Pascal is currently offline. Please leave your email and we'll get back to you soon.");
             if (!userSession?.email) {
               setIsWaitingForEmail(true);
             }
@@ -179,7 +179,7 @@ export default function ChatWidget() {
   const handleToggleChat = () => {
     if (!isOpen && !userSession) {
       // First time opening, ask for name
-      addSystemMessage("Hello! What's your name?");
+      addSystemMessage("I am happy that you are here! Whom shall i call you?");
       setIsWaitingForName(true);
     }
     setIsOpen(!isOpen);
@@ -234,7 +234,7 @@ export default function ChatWidget() {
       const messageData = {
         recipient_id: process.env.NEXT_PUBLIC_SUPPORT_AGENT,
         sender_name: userSession.name,
-        recipient_name: "Support Agent",
+        recipient_name: "Pascal",
         content: inputValue.trim(),
         content_type: "text",
       };
@@ -246,7 +246,7 @@ export default function ChatWidget() {
         sender_id: userSession.id,
         recipient_id: process.env.NEXT_PUBLIC_SUPPORT_AGENT!,
         sender_name: userSession.name,
-        recipient_name: "Support Agent",
+        recipient_name: "Pascal",
         timestamp: new Date().toISOString(),
         isUser: true,
       };
@@ -269,9 +269,9 @@ export default function ChatWidget() {
 
   const getConnectionStatus = () => {
     if (isConnecting) return { text: "Connecting...", color: "text-yellow-500" };
-    if (isConnected && supportAgentOnline) return { text: "Agent Online", color: "text-green-500" };
-    if (isConnected && !supportAgentOnline) return { text: "Agent Offline", color: "text-orange-500" };
-    return { text: "Disconnected", color: "text-red-500" };
+    if (isConnected && supportAgentOnline) return { text: "", color: "text-green-500" };
+    if (isConnected && !supportAgentOnline) return { text: "", color: "text-orange-500" };
+    return { text: "", color: "text-red-500" };
   };
 
   const status = getConnectionStatus();
@@ -306,7 +306,7 @@ export default function ChatWidget() {
                   Chat Support
                 </h3>
                 <p className="text-light-gray-70 text-sm">
-                  {userSession ? `Hello, ${userSession.name}!` : "We're here to help"}
+                  {userSession ? `Hello, there!` : "We're here to help"}
                 </p>
               </div>
               <div className="flex items-center gap-2">
