@@ -33,7 +33,7 @@ mathjax: true
 
 Chaos engineering is the practice of intentionally introducing controlled failures into systems to uncover weaknesses and improve resilience before users are affected. Netflix pioneered this with the Simian Army, a suite of specialized tools like Chaos Monkey, Chaos Gorilla, Doctor Monkey, Janitor Monkey, and Conformity Monkey. Each tool addresses a specific scenario within Netflix's cloud ecosystem, often tightly coupled with Spinnaker and AWS.
 
-Inspired by these ideas, **chaosctl** aims to combine the best practices of chaos engineering into a single, simple, and application-agnostic CLI. Unlike Netflix's tools, chaosctl is designed to work with any developer's service, whether running locally, on a VPS, or in a staging/production-like environment. Its guiding philosophy is akin to Tiangolo's approach: keep tools simple, usable, and developer-friendly, while still powerful and extensible.
+Inspired by these ideas, **chaosctl** aims to combine the best practices of chaos engineering into a single, simple, and application-agnostic CLI. Unlike Netflix's tools, chaosctl is designed to work with any developer's service, whether running locally, on a VPS, or in a staging/production-like environment.
 
 ## Why Not Existing Tools?
 
@@ -162,7 +162,7 @@ The tool emphasizes simplicity for developers while still providing powerful cha
 
 ## Conclusion
 
-This design document lays out the architecture for **chaosctl** — a unified, simple, and application-agnostic chaos engineering CLI. It draws inspiration from Netflix's Simian Army but applies the Tiangolo philosophy of simplicity: one tool that works anywhere, with minimal setup, for any developer.
+This design document lays out the architecture for **chaosctl** — a unified, simple, and application-agnostic chaos engineering CLI. It draws inspiration from Netflix's Simian Army but simplified: one tool that works anywhere, with minimal setup, for any developer.
 
 The key design decisions are:
 - **Go** for portability and single-binary distribution
