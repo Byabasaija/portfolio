@@ -66,9 +66,10 @@ useEffect(() => {
                         <li className="relative rounded-2xl shadow-shadow-2 coding-item bg-gradient-onyx before:absolute before:content-[''] before:rounded-2xl">
                         <div className="shadow-feature-card dark:shadow-feature-card-dark flex flex-col gap-2 overflow-hidden rounded-xl p-2">
                         <img 
-                                    src="https://github-readme-stats.vercel.app/api?username=Byabasaija&show_icons=true&theme=tokyonight&count_private=true&hide_border=true&hide=contribs" 
+                                    src={`https://github-readme-stats-fawn-seven-17.vercel.app/api?username=${githubUsername}&show_icons=true&theme=tokyonight&count_private=true&hide_border=true&hide=contribs`}
                                     alt="GitHub Stats" 
-                                    className="h-auto" 
+                                    className="h-auto"
+                                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                                     />
                         </div>
                         </li>
@@ -180,20 +181,52 @@ useEffect(() => {
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-3">🛠️ Open Source Projects</h2>
         
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
+        <div className="border border-gray-200 rounded-lg overflow-hidden mb-3">
           <button 
             className="w-full text-left px-4 py-3 font-bold bg-onyx focus:outline-none flex justify-between items-center"
             onClick={() => toggleProject('ChatAPI')}
           >
-            <span>ChatAPI - (Author)</span>
+            <span className="flex items-center gap-3">
+              ChatAPI
+              <img
+                src="https://img.shields.io/github/stars/Byabasaija/chatapi?style=social"
+                alt="ChatAPI GitHub stars"
+                className="inline-block"
+              />
+            </span>
             <span>{expandedProject === 'ChatAPI' ? '−' : '+'}</span>
           </button>
           
           {expandedProject === 'ChatAPI' && (
-            <div className="p-4 ">
-              <p className="mb-2"><strong>Description:</strong> An open source pluggable api for messaging/chat and notifications.</p>
+            <div className="p-4">
+              <p className="mb-2"><strong>Description:</strong> An open-source pluggable API for messaging, chat, and notifications.</p>
               <p className="mb-2"><strong>Tech Stack:</strong> Python, FastAPI, Celery, RabbitMQ, PostgreSQL, Docker</p>
               <p><strong>Links:</strong> <a href="https://github.com/Byabasaija/chatapi" className="text-blue-600 hover:underline">Repository</a></p>
+            </div>
+          )}
+        </div>
+
+        <div className="border border-gray-200 rounded-lg overflow-hidden">
+          <button 
+            className="w-full text-left px-4 py-3 font-bold bg-onyx focus:outline-none flex justify-between items-center"
+            onClick={() => toggleProject('ChaosCTL')}
+          >
+            <span className="flex items-center gap-3">
+              ChaosCTL
+              <img
+                src="https://img.shields.io/github/stars/Byabasaija/chaosctl?style=social"
+                alt="ChaosCTL GitHub stars"
+                className="inline-block"
+              />
+            </span>
+            <span>{expandedProject === 'ChaosCTL' ? '−' : '+'}</span>
+          </button>
+          
+          {expandedProject === 'ChaosCTL' && (
+            <div className="p-4">
+              <p className="mb-2"><strong>Description:</strong> A unified, application-agnostic chaos engineering CLI inspired by Netflix's Simian Army.</p>
+              <p className="mb-2"><strong>Tech Stack:</strong> Go, Cobra CLI</p>
+              <p><strong>Links:</strong> <a href="https://github.com/Byabasaija/chaosctl" className="text-blue-600 hover:underline">Repository</a></p>
             </div>
           )}
         </div>

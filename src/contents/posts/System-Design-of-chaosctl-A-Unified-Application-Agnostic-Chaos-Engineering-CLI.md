@@ -2,7 +2,7 @@
 title: "System Design of chaosctl — Chaos Engineering CLI"
 date: "2026-03-04"
 category: System Design
-coverImage: /images/banner/posts/chaosctl-system-image .png
+coverImage: /images/banner/posts/chaosctl-system-image.png
 excerpt: "Explore the architectural design of chaosctl, a unified chaos engineering CLI inspired by Netflix's Simian Army but designed for universal application compatibility."
 author:
   name: Pascal
@@ -16,14 +16,14 @@ tags:
   - Reliability Engineering
 publishedAt: "2026-03-04"
 ogImage:
-  url: "/images/banner/posts/chaosctl-system-image .png"
+  url: "/images/banner/posts/chaosctl-system-image.png"
 summary: "Design and architecture of chaosctl, a unified chaos engineering CLI that combines Netflix's Simian Army best practices into a single, application-agnostic tool for developers."
-banner: /images/banner/posts/chaosctl-system-image .png
+banner: /images/banner/posts/chaosctl-system-image.png
 alt: "System Design of chaosctl Chaos Engineering CLI"
 mathjax: true
 ---
 
-![System Design of chaosctl](/images/banner/posts/chaosctl-system-image .png)
+![System Design of chaosctl](/images/banner/posts/chaosctl-system-image.png)
 
 ---
 
