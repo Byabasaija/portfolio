@@ -45,9 +45,9 @@ useEffect(() => {
       <h1 className="text-3xl font-bold mb-2">Hello, I'm Pascal Byabasaija 👋</h1>
 
       <blockquote className="border-l-4 border-gray-300 pl-4 italic mb-4">
-        Full-Stack Software Engineer passionate about building elegant solutions to complex problems.
+        Backend Engineer specializing in distributed systems and financial infrastructure. 5+ years of experience building scalable APIs, payment integrations, and cloud-native platforms.
         <br />
-        <strong>Currently seeking new opportunities in software development.</strong>
+        {/* <strong>Currently seeking new opportunities in software development.</strong> */}
       </blockquote>
 
       {/* <Hello /> */}
