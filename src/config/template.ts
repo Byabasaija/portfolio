@@ -291,7 +291,42 @@ delivering user-centric software products. 🚀
           },
         ],
       },
-      
+      awardLeaderships: {
+        icon: PiTrophy,
+        title: "Certifications & Achievements",
+        items: [
+          {
+            company: "DMARK Mobile Company",
+            location: "Kampala, Uganda",
+            role: "Head Hunted — Senior Engineering Role",
+            duration: "2025",
+            tasksMarkdown: `
+  - **Head hunted** to join one of the leading fintech companies in Uganda,
+    validating expertise in backend systems and financial infrastructure.
+            `,
+          },
+          {
+            company: "Dissimilar Media",
+            location: "Remote",
+            role: "73.6% Startup Growth",
+            duration: "2024",
+            tasksMarkdown: `
+  - Drove **73.6% startup growth** through strategic platform development,
+    PayPal integration, and performance optimization of Monetize 54.
+            `,
+          },
+          {
+            company: "Mara Scientific",
+            location: "Kampala, Uganda",
+            role: "Promoted to Project Lead",
+            duration: "2023",
+            tasksMarkdown: `
+  - **Early leadership recognition** — promoted to Project Lead after 2 years as developer,
+    managing a cross-functional team of 6 engineers on Mpeke HMIS.
+            `,
+          },
+        ],
+      },
       professionalExperiences: {
         icon: MdOutlineDevices,
         title: "Professional Experience",
