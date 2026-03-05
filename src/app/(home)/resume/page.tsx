@@ -9,7 +9,7 @@ const { title, resume } = config;
 const {
   professionalExperiences,
   educations,
-  // awardLeaderships,
+  awardLeaderships,
   // teachingExperiences,
 } = resume;
 
@@ -24,7 +24,7 @@ export default function Resume() {
       <DownloadCV />
       <TimeLine data={professionalExperiences} />
       <TimeLine data={educations} />
-      {/* <TimeLine data={awardLeaderships} /> */}
+      <TimeLine data={awardLeaderships} />
       {/* <TimeLine data={teachingExperiences} /> */}
     </article>
   );

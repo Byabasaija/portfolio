@@ -39,9 +39,9 @@ import {
 
 const config: Config = {
   avatar: "/images/profile.jpeg",
-  title: "Pascal Byabasaija - Software Engineer",
+  title: "Pascal Byabasaija - Backend & Distributed Systems Engineer",
   description:
-    "I'm Pascal Byabasaija, a Software Engineer with 4+ years of success in Agile Development, Full-Stack Engineering, and Software Architecture.",
+    "Backend Engineer specializing in distributed systems and financial infrastructure. 5+ years building scalable APIs, payment integrations, and cloud-native platforms.",
   author: "Pascal Byabasaija",
   keywords: [
     "Pascal Byabasaija",
@@ -188,12 +188,15 @@ const config: Config = {
     pronouns: "He/Him",
     githubUsername: "Byabasaija",
     introduction: `
-Experienced Software Engineer with over 4 years of building scalable web applications across
-different domains. Adept in **React, Next.js, FastAPI, Flask, MongoDB, Docker, and CI/CD
-pipelines**. Proven leadership in managing cross-functional teams, optimizing infrastructure, and
-delivering user-centric software products. 🚀
+Backend Engineer specializing in **distributed systems and financial infrastructure**. 5+ years
+building scalable APIs, payment integrations, and cloud-native platforms. Currently building
+mobile banking infrastructure supporting **30+ SACCOs and 75k+ monthly transactions** via
+telecom integrations with MTN Uganda and Airtel Uganda.
 
-**Self-motivated, Team player, Love coding 👨🏻‍💻**
+Creator of **ChatAPI** and **ChaosCTL**, open-source developer tools demonstrating expertise
+in real-time messaging and chaos engineering. 🚀
+
+**Self-motivated, open-source creator, loves building things that scale 👨🏻‍💻**
     `,
     lifestyles: [
       
@@ -223,19 +226,18 @@ delivering user-centric software products. 🚀
       programmingLanguages: [
         { name: "Python", icon: AiOutlinePython },
         { name: "TypeScript", icon: TbBrandTypescript },
-        { name: "SQL", icon: TbSql },
         { name: "JavaScript", icon: RiJavascriptLine },
-        
+        { name: "Go", icon: TbBrandGolang },
+        { name: "SQL", icon: TbSql },
       ],
       frameworks: [
-        { name: "React", icon: FaReact },
         { name: "FastAPI", icon: SiFastapi },
+        { name: "Django", icon: TbBrandDjango },
         { name: "Flask", icon: BiLogoFlask },
-        { name: "Linux Terminal", icon: VscTerminalLinux },
         { name: "AWS", icon: FaAws },
-        { name: "Next.js", icon: TbBrandNextjs },
         { name: "Docker", icon: TbBrandDocker },
-        { name: "MySQL", icon: TbBrandMysql },
+        { name: "Linux Terminal", icon: VscTerminalLinux },
+        { name: "Next.js", icon: TbBrandNextjs },
         { name: "Postman", icon: SiPostman },
       ],
     },
@@ -245,68 +247,129 @@ delivering user-centric software products. 🚀
       icon: IoSchoolOutline,
       title: "Education",
       items: [
-        
-        {
-          company: "Microverse Inc",
-          location: "San Fransinco, CA",
-          role: "Fullstack Software Development",
-          duration: "2020 - 2021",
-          tasksMarkdown: `
-- **Dedicated over 1,500 hours to mastering web development** remotely,
-collaborating with a global community of software developers.
-- **Actively participated in peer-to-peer code reviews with over 50 different
-students** improving code quality by incorporating feedback and
-enhancing collaborative learning.
-- **Contributed to real-world projects by applying** newly acquired skills to
-develop over 5 practical, production-ready applications.
-
-        `,
-        },
         {
           company: "Ndejje University",
           location: "Kampala, Uganda",
-          role: "Bachelors in Information Technology",
+          role: "Bachelor of Information Technology",
           duration: "2020 — 2023",
           tasksMarkdown: `
-- **Coursework included programming in:** C++ and PHP, Database and System
-administration, Operating systems, Project management, Communication
-skills, Research methods etc.
-
-        `,
+- **Weekend program** while working full-time as a software developer.
+- **Coursework included:** C++ and PHP, Database and System Administration,
+  Operating Systems, Project Management, Communication Skills, Research Methods.
+          `,
+        },
+        {
+          company: "Microverse Inc",
+          location: "Remote, San Francisco, CA",
+          role: "Full-Stack Software Development Program",
+          duration: "2020",
+          tasksMarkdown: `
+- **Dedicated over 1,500 hours** to mastering full-stack web development remotely,
+  collaborating with a global community of software developers.
+- **Peer-to-peer code reviews** with over 50 different students, improving code
+  quality and collaborative learning.
+- **Developed 5+ production-ready applications** applying real-world engineering practices.
+          `,
+        },
+        {
+          company: "edX / Harvard",
+          location: "Remote",
+          role: "CS50's Introduction to Computer Science",
+          duration: "2022",
+          tasksMarkdown: `
+- Completed Harvard's renowned CS course covering algorithms, data structures,
+  web development, and software engineering principles.
+          `,
         },
       ],
     },
-   
-    professionalExperiences: {
-      icon: MdOutlineDevices,
-      title: "Professional Experience",
+    awardLeaderships: {
+      icon: PiTrophy,
+      title: "Certifications & Achievements",
       items: [
         {
-          company: "Dissimilar Media(formerly Backlink Africa)",
+          company: "DMARK Mobile Company",
           location: "Kampala, Uganda",
-          role: "Fullstack Software Engineer",
-          duration: "2024 - Present",
+          role: "Head Hunted — Senior Engineering Role",
+          duration: "2025",
           tasksMarkdown: `
-- Built and deployed Monetize 54 using Next.js 14, FastAPI, and MongoDB.
-- Integrated PayPal, increasing transactions by 20%.
-- Engineered in-app messaging and recommendation systems, boosting engagement and
-cross-sell metrics.
-- Engineered fast full-text search capabilities for Monetize 54 using Typesense, reducing search query times by 60% and improving user satisfaction.
-- Improved cloud performance by 30% through Docker, CI/CD, and Hetzner orchestration.
+- **Head hunted** to join one of the leading fintech companies in Uganda,
+  validating expertise in backend systems and financial infrastructure.
+          `,
+        },
+        {
+          company: "Dissimilar Media",
+          location: "Remote",
+          role: "73.6% Startup Growth",
+          duration: "2024",
+          tasksMarkdown: `
+- Drove **73.6% startup growth** through strategic platform development,
+  PayPal integration, and performance optimization of Monetize 54.
           `,
         },
         {
           company: "Mara Scientific",
           location: "Kampala, Uganda",
-          role: "Fullstack Software Engineer & Project Lead",
-          duration: "2021 - 2024",
+          role: "Promoted to Project Lead",
+          duration: "2023",
           tasksMarkdown: `
--  Promoted to lead developer team of 6 on Mpeke HMIS project after stepping up to mediate a misunderstanding between a client, sales and engineering teams about the project deliverables.
-- Consequently, speeded up feature delivery by 38% and reduced bugs by 30%.
-- Developed full-stack features in healthcare applications with React and Flask.
-- Collaborated with DevOps for cloud/offline deployments; improved client satisfaction by
-20%.
-- Implemented code linting and CI practices, reducing bugs and review times.
+- **Early leadership recognition** — promoted to Project Lead after 2 years as developer,
+  managing a cross-functional team of 6 engineers on Mpeke HMIS.
+          `,
+        },
+      ],
+    },
+    professionalExperiences: {
+      icon: MdOutlineDevices,
+      title: "Professional Experience",
+      items: [
+        {
+          company: "DMARK Mobile Company",
+          location: "Onsite, Kampala, Uganda",
+          role: "Software Engineer",
+          duration: "August 2025 – Present",
+          tasksMarkdown: `
+- Architected and operated a **fault-tolerant mobile banking transaction system** integrating
+  with MTN Uganda and Airtel Uganda, supporting **30+ SACCOs and 75,000+ monthly transactions**.
+- Engineered a **high-throughput bulk payment processing system** enabling automated mobile
+  money payouts, processing **15,000+ monthly transactions** with fault-tolerant retry mechanisms.
+- Developed internal **observability infrastructure** to monitor API traffic, server resources,
+  and SMS gateway health, improving system reliability and operational visibility.
+          `,
+        },
+        {
+          company: "Dissimilar Media",
+          location: "Remote, Nairobi, Kenya",
+          role: "Full-Stack Software Engineer",
+          duration: "May 2024 – Present",
+          tasksMarkdown: `
+- Drove **73.6% startup growth** by architecting Monetize 54, an African-focused digital
+  services marketplace serving 500+ users.
+- Integrated **PayPal payment gateway** with fraud detection, achieving 20% increase in
+  successful transactions and 99.8% uptime.
+- Built **real-time messaging and notifications** system using WebSockets, supporting
+  200+ concurrent connections (inspiration for ChatAPI open-source project).
+- Implemented **intelligent recommendation engine** and full-text search via Typesense,
+  increasing platform engagement by 25%.
+- Optimized cloud infrastructure by **30%** through Docker containerization and strategic cloud migration.
+          `,
+        },
+        {
+          company: "Mara Scientific",
+          location: "Onsite, Kampala, Uganda",
+          role: "Project Lead & Full-Stack Developer",
+          duration: "June 2021 – May 2024",
+          tasksMarkdown: `
+- **Promoted to Project Lead** for Mpeke HMIS after 2+ years as developer,
+  leading a team of 6 developers.
+- Accelerated feature delivery by **38%** and reduced production bugs by **30%**
+  through Agile implementation and code quality standards.
+- Developed **10+ healthcare modules** using Flask, including patient management
+  and inventory systems.
+- Architected **hybrid cloud/offline solution** for remote clinics, improving
+  system accessibility by 40%.
+- Mentored 3 junior developers and established **CI/CD pipeline** reducing
+  deployment time from 2 hours to 15 minutes.
           `,
         },
       ],
@@ -329,8 +392,8 @@ cross-sell metrics.
         sameAs: "https://www.ncu.edu.tw/",
       },
     ],
-    jobTitle: "Software Engineer",
-    skills: "Software Engineering, Web Development, Open Source",
+    jobTitle: "Backend & Distributed Systems Engineer",
+    skills: "Backend Engineering, Distributed Systems, Payment Integrations, Go, Python, TypeScript, FastAPI, Django, Docker, AWS",
     image: "https://byabasaija.com/images/profile.jpeg",
     url: "https://byabasaija.com/",
     sameAs: [

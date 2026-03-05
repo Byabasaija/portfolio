@@ -2,7 +2,7 @@ import type { VCardIconType } from "@/types/config";
 
 export type Resume = {
   educations: Education;
-  // awardLeaderships: AwardLeaderships;
+  awardLeaderships: AwardLeaderships;
   // teachingExperiences: TeachingExperience;
   professionalExperiences: ProfessionalExperience;
 };
