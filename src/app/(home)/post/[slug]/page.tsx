@@ -130,10 +130,10 @@ export default async function Post(props: { params: tParams }) {
               {"Pascal's Blog"}
             </h1>
           </header>
-          <h1 className="font-semibold text-4xl text-white-2 max-w-[650px]">
+          <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl text-white-2 max-w-full sm:max-w-[650px]">
             <MarkdownRenderer content={post.metadata.title} />
           </h1>
-          <div className="flex items-center justify-between mt-4 text-sm w-full text-neutral-600 dark:text-neutral-400">
+          <div className="flex flex-wrap items-center justify-between gap-y-2 mt-4 text-sm w-full text-neutral-600 dark:text-neutral-400">
             <div className="flex items-center space-x-2">
               <span>{formatDate(post.metadata.publishedAt)}</span>
               <span
@@ -142,7 +142,7 @@ export default async function Post(props: { params: tParams }) {
               ></span>
               <span>{post.metadata.category}</span>
             </div>
-            <div className="flex items-center space-x-2 ml-4">
+            <div className="flex items-center space-x-2">
               <Link
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
                 target="_blank"
@@ -165,7 +165,7 @@ export default async function Post(props: { params: tParams }) {
           </div>
           <div className="separator"></div>
           <div className="flex justify-center">
-            <div className="w-[90%] sm:w-[90%] md:w-[90%] lg:w-[80%] xl:w-[80%]">
+            <div className="w-full sm:w-[90%] lg:w-[80%] xl:w-[80%] min-w-0">
               <MarkdownRenderer content={post.content} />
             </div>
           </div>

@@ -14,19 +14,19 @@ function AnchorHeader({ level, children, ...props }: HeaderProps) {
   let getMargins = (level: number) => {
     switch (level) {
       case 1:
-        return "text-3xl text-white-2 font-bold mt-14 mb-10";
+        return "text-2xl sm:text-3xl text-white-2 font-bold mt-8 mb-5 sm:mt-14 sm:mb-10";
       case 2:
-        return "text-2xl text-white-2 font-bold mt-12 mb-8";
+        return "text-xl sm:text-2xl text-white-2 font-bold mt-6 mb-4 sm:mt-12 sm:mb-8";
       case 3:
-        return "text-xl text-white-2 font-bold mt-10 mb-6";
+        return "text-lg sm:text-xl text-white-2 font-bold mt-5 mb-3 sm:mt-10 sm:mb-6";
       case 4:
-        return "text-lg text-white-2 font-semibold mt-8 mb-4";
+        return "text-base sm:text-lg text-white-2 font-semibold mt-4 mb-3 sm:mt-8 sm:mb-4";
       case 5:
-        return "text-base text-white-2 font-semibold mt-6 mb-3";
+        return "text-sm sm:text-base text-white-2 font-semibold mt-4 mb-2 sm:mt-6 sm:mb-3";
       case 6:
-        return "text-sm text-white-2 font-semibold mt-4 mb-2";
+        return "text-xs sm:text-sm text-white-2 font-semibold mt-3 mb-2 sm:mt-4 sm:mb-2";
       case 7:
-        return "text-xs text-white-2 font-semibold mt-4 mb-2";
+        return "text-xs text-white-2 font-semibold mt-3 mb-2 sm:mt-4 sm:mb-2";
       default:
         return "";
     }
@@ -44,7 +44,7 @@ function AnchorHeader({ level, children, ...props }: HeaderProps) {
         href={`#${id}`}
         className="no-underline text-[#d6d6d6] hover:underline flex items-center"
       >
-        <span className="absolute left-[-2.0rem] top-[0.2rem] opacity-0 transition-opacity duration-200 ease-in-out scale-90 group-hover:opacity-100">
+        <span className="hidden sm:inline-block absolute left-[-2.0rem] top-[0.2rem] opacity-0 transition-opacity duration-200 ease-in-out scale-90 group-hover:opacity-100">
           <IoLink />
         </span>
       </a>

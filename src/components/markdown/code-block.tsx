@@ -17,9 +17,16 @@ interface CodeBlockProps {
  */
 function CodeBlock({ language, children }: CodeBlockProps) {
   return (
-    <SyntaxHighlighter style={oneDark} PreTag="div" language={language}>
-      {String(children).trimEnd()}
-    </SyntaxHighlighter>
+    <div className="overflow-x-auto w-full my-6 rounded-lg text-sm">
+      <SyntaxHighlighter
+        style={oneDark}
+        PreTag="div"
+        language={language}
+        customStyle={{ margin: 0, borderRadius: '0.5rem' }}
+      >
+        {String(children).trimEnd()}
+      </SyntaxHighlighter>
+    </div>
   );
 }
 
