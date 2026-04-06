@@ -1,7 +1,7 @@
 import { Config } from "@/types/config";
 import { MdOutlineDevices, MdAttachment } from "react-icons/md";
 import { IoSchoolOutline } from "react-icons/io5";
-import { PiTrophy, PiBooks, PiMediumLogoBold } from "react-icons/pi";
+import { PiTrophy, PiMediumLogoBold } from "react-icons/pi";
 import { GoalIcon } from "@primer/octicons-react";
 import {
   LuGithub,
@@ -13,28 +13,19 @@ import {
   LuBookOpen,
   LuLaptop
 } from "react-icons/lu";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaReact, FaAws } from "react-icons/fa";
+import { FaAws } from "react-icons/fa";
 import { AiOutlinePython } from "react-icons/ai";
-import { RiJavaLine, RiJavascriptLine } from "react-icons/ri";
-import { SiLatex, SiFastapi, SiKubernetes, SiPostman } from "react-icons/si";
+import { RiJavascriptLine } from "react-icons/ri";
+import { SiFastapi, SiPostman } from "react-icons/si";
 import { BiLogoFlask } from "react-icons/bi";
-import { VscTerminalLinux, VscAzure } from "react-icons/vsc";
-import { DiRedis } from "react-icons/di";
+import { VscTerminalLinux } from "react-icons/vsc";
 import {
-  TbBrandCpp,
   TbBrandTypescript,
   TbBrandGolang,
   TbBrandNextjs,
   TbBrandDjango,
   TbBrandDocker,
-  TbBrandMysql,
-  TbMarkdown,
-  TbBrandAstro,
-  TbBrandTerraform,
-  TbPhotoSquareRounded,
   TbSql,
-  
 } from "react-icons/tb";
 
 const config: Config = {
