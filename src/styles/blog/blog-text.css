@@ -2,6 +2,34 @@
     color: var(--light-gray);
     font-weight: var(--fw-300);
     line-height: 1.6;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.blog-text img {
+    max-width: 100%;
+    height: auto;
+}
+
+.blog-text table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.blog-text pre,
+.blog-text code {
+    max-width: 100%;
+    white-space: pre;
+    overflow-x: auto;
+    word-break: normal;
+}
+
+.blog-text p,
+.blog-text li {
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .blog-text p {
