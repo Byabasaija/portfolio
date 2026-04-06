@@ -3,8 +3,6 @@
 import config from '@/config';
 import { useState, useEffect, useRef } from 'react';
 import GitHubCalendar from 'react-github-calendar';
-import { LuMapPin } from 'react-icons/lu';
-import Globe from './globe';
 import { BlurFade } from '../magicui/blur-fade';
 import CodeHeader from '../section/about/code-header';
 
@@ -12,114 +10,97 @@ const { about } = config;
 const { githubUsername } = about;
 
 export default function GitHubProfile() {
-  const [expandedProject, setExpandedProject] = useState(null);
-
-  const toggleProject = (projectName) => {
-    if (expandedProject === projectName) {
-      setExpandedProject(null);
-    } else {
-      setExpandedProject(projectName);
-    }
-  };
-
+  const [expandedProject, setExpandedProject] = useState<string | null>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
+
+  const toggleProject = (projectName: string) => {
+    setExpandedProject((prev) => (prev === projectName ? null : projectName));
+  };
 
   useEffect(() => {
     if (calendarRef.current) {
-      const container = calendarRef.current;
-      container.scrollLeft = container.clientWidth * 2;
+      calendarRef.current.scrollLeft = calendarRef.current.clientWidth * 2;
     }
   }, []);
 
   return (
-    <div className="max-w-full text-gray-100 ">
+    <div className="max-w-full text-gray-100">
       <h1 className="text-3xl font-bold mb-2">Hello, I'm Pascal Byabasaija 👋</h1>
 
-      <blockquote className="border-l-4 border-gray-300 pl-4 italic mb-4">
-        Backend Engineer specializing in distributed systems and financial infrastructure. 5+ years of experience building scalable APIs, payment integrations, and cloud-native platforms.
-      </blockquote>
+      <p className="text-light-gray mb-8">
+        Software Engineer who prioritizes —{" "}
+        <span className="text-orange-yellow-crayola font-medium">reliability</span>,{" "}
+        <span className="text-orange-yellow-crayola font-medium">scalability</span>,{" "}
+        and{" "}
+        <span className="text-orange-yellow-crayola font-medium">maintainability</span>.
+      </p>
 
-      <div className="flex mb-6">
-        <img src="https://img.shields.io/badge/OPEN_TO_WORK-brightgreen?style=for-the-badge" alt="Open To Work" />
-      </div>
-
-      <section id="coding-stats mb-6">
+      {/* GitHub Activity */}
+      <section className="mb-8">
         <BlurFade inView delay={0.4} direction="down">
-          <CodeHeader id="coding-stats" text="$ Coding Stats" />
-        </BlurFade>
-
-        <BlurFade inView delay={0.4} direction="left">
-          <ul className="mt-[30px] grid grid-cols-1 gap-[20px] md:grid-cols-2 lg:grid-cols-2 lg:gap-y-[20px] lg:gap-x-[25px]">
-            <li className="relative rounded-2xl shadow-shadow-2 coding-item bg-gradient-onyx before:absolute before:content-[''] before:rounded-2xl">
-              <div className="shadow-feature-card dark:shadow-feature-card-dark flex flex-col gap-2 overflow-hidden rounded-xl p-2">
-                <img
-                  src={`https://github-readme-stats-fawn-seven-17.vercel.app/api?username=${githubUsername}&show_icons=true&theme=tokyonight&count_private=true&hide_border=true&hide=contribs`}
-                  alt="GitHub Stats"
-                  className="h-auto"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                />
-              </div>
-            </li>
-
-            <li className="relative rounded-2xl shadow-shadow-2 coding-item bg-gradient-onyx before:absolute before:content-[''] before:rounded-2xl h-[200px] md:h-auto">
-              <div className="absolute inset-x-0 bottom-[-190px] mx-auto aspect-square h-[388px] [@media(max-width:420px)]:bottom-[-140px] [@media(max-width:420px)]:h-[320px] [@media(min-width:768px)_and_(max-width:858px)]:h-[380px]">
-                <div className="flex items-center gap-2 text-white-2 mt-4 ml-4">
-                  <LuMapPin size={18} />
-                  <h2 className="text-sm font-light">
-                    Kampala, Uganda (UTC +03:00)
-                  </h2>
-                </div>
-                <Globe />
-              </div>
-            </li>
-          </ul>
+          <CodeHeader id="github-activity" text="$ GitHub Activity" />
         </BlurFade>
 
         <BlurFade inView delay={0.4} direction="up">
-          <section id="github-calendar" className="text-light-gray mt-5 overflow-x-auto scroll-smooth" ref={calendarRef}>
-            <GitHubCalendar
-              username={githubUsername}
-              blockSize={10}
-              blockMargin={4}
-              colorScheme="dark"
-              blockRadius={2}
-              fontSize={14}
-              style={{ fontWeight: "bold", minWidth: '600px' }}
-            />
-          </section>
+          <div className="mt-6">
+
+            {/* Calendar card */}
+            <div className="rounded-2xl bg-gradient-onyx p-5 flex flex-col justify-center min-w-0">
+              <p className="text-xs text-light-gray-70 mb-4 uppercase tracking-widest">Contribution Activity</p>
+              <div
+                ref={calendarRef}
+                className="overflow-x-auto scroll-smooth"
+              >
+                <GitHubCalendar
+                  username={githubUsername}
+                  blockSize={10}
+                  blockMargin={4}
+                  colorScheme="dark"
+                  blockRadius={2}
+                  fontSize={13}
+                  style={{ fontWeight: "bold", minWidth: '560px' }}
+                />
+              </div>
+            </div>
+          </div>
         </BlurFade>
       </section>
 
-      <section className="mb-6 mt-6">
-        <h2 className="text-2xl font-bold mb-3">About Me</h2>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>🔭 I'm a Backend/Distributed Systems Engineer focused on building intuitive, efficient applications</li>
-          <li>💡 I love building tools that make life easier for users and businesses</li>
+      {/* About */}
+      <section className="mb-8">
+        <BlurFade inView delay={0.4} direction="down">
+          <CodeHeader id="about-me" text="$ About Me" />
+        </BlurFade>
+        <ul className="list-disc pl-6 space-y-2 text-light-gray mt-4">
+          <li>I build backend systems designed to survive — not just launch</li>
+          <li>Drawn to problems involving distributed state, event-driven architecture, and financial data</li>
         </ul>
       </section>
 
-      <section className="mb-6">
-        <h2 className="text-2xl font-bold mb-3">Tech Stack</h2>
+      {/* Tech Stack */}
+      <section className="mb-8">
+        <BlurFade inView delay={0.4} direction="down">
+          <CodeHeader id="tech-stack" text="$ Tech Stack" />
+        </BlurFade>
 
-        <h3 className="text-xl font-semibold mb-2">Backend</h3>
-        <div className="flex flex-wrap gap-2 mb-4">
+        <h3 className="text-sm uppercase tracking-widest text-light-gray-70 mb-2 mt-4">Backend</h3>
+        <div className="flex flex-wrap gap-2 mb-5">
           <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
           <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
           <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
           <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
           <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" />
           <img src="https://img.shields.io/badge/Gin-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Gin" />
-          <img src="https://img.shields.io/badge/Cobra-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Cobra" />
         </div>
 
-        <h3 className="text-xl font-semibold mb-2">Databases</h3>
-        <div className="flex flex-wrap gap-2 mb-4">
+        <h3 className="text-sm uppercase tracking-widest text-light-gray-70 mb-2">Databases</h3>
+        <div className="flex flex-wrap gap-2 mb-5">
           <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
           <img src="https://img.shields.io/badge/PostGIS-008000?style=for-the-badge&logo=postgis&logoColor=white" alt="PostGIS" />
         </div>
 
-        <h3 className="text-xl font-semibold mb-2">DevOps & Cloud</h3>
-        <div className="flex flex-wrap gap-2 mb-4">
+        <h3 className="text-sm uppercase tracking-widest text-light-gray-70 mb-2">DevOps & Cloud</h3>
+        <div className="flex flex-wrap gap-2">
           <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
           <img src="https://img.shields.io/badge/Traefik-24A1C1?style=for-the-badge&logo=traefikproxy&logoColor=white" alt="Traefik" />
           <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS" />
@@ -130,64 +111,57 @@ export default function GitHubProfile() {
         </div>
       </section>
 
-      <section className="mb-6">
-        <h2 className="text-2xl font-bold mb-3">🛠️ Open Source Projects</h2>
+      {/* Open Source */}
+      <section className="mb-8">
+        <BlurFade inView delay={0.4} direction="down">
+          <CodeHeader id="open-source" text="$ Open Source" />
+        </BlurFade>
 
-        <div className="border border-gray-200 rounded-lg overflow-hidden mb-3">
-          <button
-            className="w-full text-left px-4 py-3 font-bold bg-onyx focus:outline-none flex justify-between items-center"
-            onClick={() => toggleProject('ChatAPI')}
-          >
-            <span className="flex items-center gap-3">
-              ChatAPI
-              <img
-                src="https://img.shields.io/github/stars/Byabasaija/chatapi?style=social"
-                alt="ChatAPI GitHub stars"
-                className="inline-block"
-              />
-            </span>
-            <span>{expandedProject === 'ChatAPI' ? '−' : '+'}</span>
-          </button>
+        <div className="space-y-3 mt-4">
+          {[
+            {
+              name: 'ChatAPI',
+              starsUrl: 'https://img.shields.io/github/stars/hastenr/chatapi?style=social',
+              description: 'Self-hosted chat infrastructure for AI-powered apps — think self-hosted Stream Chat, built for human-AI conversations.',
+              stack: 'Single binary, SQLite, JWT auth',
+              repo: 'https://github.com/hastenr/chatapi',
+            },
+          ].map((project) => (
+            <div key={project.name} className="rounded-2xl bg-gradient-onyx overflow-hidden">
+              <button
+                className="w-full text-left px-5 py-4 flex justify-between items-center gap-3"
+                onClick={() => toggleProject(project.name)}
+              >
+                <span className="flex items-center gap-3 font-semibold">
+                  {project.name}
+                  <img src={project.starsUrl} alt={`${project.name} stars`} className="inline-block" />
+                </span>
+                <span className="text-light-gray-70 text-lg leading-none">
+                  {expandedProject === project.name ? '−' : '+'}
+                </span>
+              </button>
 
-          {expandedProject === 'ChatAPI' && (
-            <div className="p-4">
-              <p className="mb-2"><strong>Description:</strong> An open-source pluggable API for messaging, chat, and notifications.</p>
-              <p className="mb-2"><strong>Tech Stack:</strong> Python, FastAPI, Celery, RabbitMQ, PostgreSQL, Docker</p>
-              <p><strong>Links:</strong> <a href="https://github.com/Byabasaija/chatapi" className="text-blue-600 hover:underline">Repository</a></p>
+              {expandedProject === project.name && (
+                <div className="px-5 pb-4 text-light-gray text-sm space-y-1 border-t border-white/5 pt-3">
+                  <p>{project.description}</p>
+                  <p className="text-light-gray-70">{project.stack}</p>
+                  <a href={project.repo} className="text-orange-yellow-crayola hover:underline inline-block pt-1" target="_blank" rel="noopener noreferrer">
+                    View Repository →
+                  </a>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          <button
-            className="w-full text-left px-4 py-3 font-bold bg-onyx focus:outline-none flex justify-between items-center"
-            onClick={() => toggleProject('ChaosCTL')}
-          >
-            <span className="flex items-center gap-3">
-              ChaosCTL
-              <img
-                src="https://img.shields.io/github/stars/Byabasaija/chaosctl?style=social"
-                alt="ChaosCTL GitHub stars"
-                className="inline-block"
-              />
-            </span>
-            <span>{expandedProject === 'ChaosCTL' ? '−' : '+'}</span>
-          </button>
-
-          {expandedProject === 'ChaosCTL' && (
-            <div className="p-4">
-              <p className="mb-2"><strong>Description:</strong> A unified, application-agnostic chaos engineering CLI inspired by Netflix's Simian Army.</p>
-              <p className="mb-2"><strong>Tech Stack:</strong> Go, Cobra CLI</p>
-              <p><strong>Links:</strong> <a href="https://github.com/Byabasaija/chaosctl" className="text-blue-600 hover:underline">Repository</a></p>
-            </div>
-          )}
+          ))}
         </div>
       </section>
 
+      {/* Connect */}
       <section className="mb-6">
-        <h2 className="text-2xl font-bold mb-3">📫 Connect With Me</h2>
-        <div className="flex flex-wrap justify-center gap-3">
-          <a href="https://www.linkedin.com/in/pascal-byabasaija/">
+        <BlurFade inView delay={0.4} direction="down">
+          <CodeHeader id="connect" text="$ Connect" />
+        </BlurFade>
+        <div className="flex flex-wrap gap-3 mt-4">
+          <a href="https://www.linkedin.com/in/pascal-byabasaija/" target="_blank" rel="noopener noreferrer">
             <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
           </a>
           <a href="mailto:basaijapascal9@gmail.com">
@@ -195,12 +169,6 @@ export default function GitHubProfile() {
           </a>
         </div>
       </section>
-
-      <hr className="border-t border-gray-300 my-6" />
-
-      <div className="text-center text-gray-300 italic">
-        Thanks for visiting my profile! Don't hesitate to reach out if you think we could work together.
-      </div>
     </div>
   );
 }
