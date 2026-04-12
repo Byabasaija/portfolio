@@ -7,6 +7,7 @@ import Header from "@/components/layout/header";
 import SideBar from "@/components/layout/side-bar";
 import { ProgressBar } from "@/components/progress-bar";
 import { WebVitals } from "@/components/web-vitals";
+import ChatWidget from "@/components/chat/widget";
 import config from "@/config";
 
 import type { Metadata } from "next";
@@ -65,6 +66,7 @@ function HomeLayout({ children }: { readonly children: React.ReactNode }) {
           key="byabasaija-website-jsonld"
         />
       <Analytics />
+      <ChatWidget />
       </body>
       <GoogleAnalytics gaId={googleAnalyticId} />
       <GoogleTagManager gtmId={googleTagManagerId} />
