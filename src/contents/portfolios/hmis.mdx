@@ -1,21 +1,23 @@
 ---
-title: "HMIS"
-startDate: 2020-11-01
-endDate: 2024-03-31
-publishedAt: 2024-03-31
-category: Web Development
-tags: 
-    - Machine Learning
-    - Hospital management
-    - Reactjs
-    - Flask
+title: "Mpeke HMIS"
+startDate: 2021-06-01
+endDate: 2024-05-31
+publishedAt: 2026-04-07
+category: Systems Design
+tags:
+  - Python
+  - Flask
+  - PostgreSQL
+  - React
+  - Docker
+  - CI/CD
 
-summary: "A hostpital data management application"
+summary: "Enterprise hospital management system for Uganda — hybrid cloud/offline architecture supporting remote clinics with no reliable internet."
 banner: /images/banner/projects/hmis.png
-alt: "Refinaid: Bridging the Gap with AI For Everyone"
+alt: "Mpeke HMIS — Hospital Management System"
 ---
 
-An Enterprise Hospital data management application
+Mpeke HMIS is an enterprise hospital management system built for Mara Scientific and deployed across clinics in Uganda. I joined as a backend developer and was promoted to Project Lead after two years, leading a team of 6 engineers through the system's full production lifecycle.
 
 <div align="center">
   <strong>
@@ -25,17 +27,26 @@ An Enterprise Hospital data management application
 
 ![HMIS](/images/banner/projects/hmis.png)
 
-## About
+## The Hard Problem
 
-Mpeke HMIS is a hospital enterprise resource planning tool designed to better patient outcomes by providing medical personnel with visually descriptive data maps, a intuitive workflows and a compressive analytics and prediction engine powered by Artificial Intelligence and Machine Learning
+Ugandan clinics outside Kampala have intermittent or no internet connectivity. A cloud-only system would be unusable for the majority of the intended users. The system had to work offline-first, sync reliably when connectivity returned, and do this without requiring clinic staff to manage any local infrastructure.
 
-## Built with 
+## Architecture Decisions
 
-***Backend***
-- Flask(API)
-- Postgresql
-- pandas
+**Hybrid cloud/offline architecture.** Each clinic runs a lightweight local instance that operates fully offline. When connectivity is available, it syncs with the central cloud instance via a conflict-aware replication layer. Medical records, prescriptions, and inventory are available regardless of network state. This improved system accessibility by 40% across remote deployments.
 
-***Frontend***
-- Reactjs
-- Material UI
+**PostgreSQL with structured audit trails.** Healthcare data requires full auditability — every record change is logged with user, timestamp, and previous value. PostgreSQL's WAL and trigger-based audit logging gave this without a separate audit service.
+
+**Modular Flask API.** 10+ independent modules (patient management, inventory, prescriptions, billing, analytics) were built as separate Flask blueprints with a shared authentication layer. This let the team work in parallel without merge conflicts on the core application and allowed clinics to enable only the modules they needed.
+
+**CI/CD pipeline reducing deployment time from 2 hours to 15 minutes.** Previously deployments were manual SSH + rsync operations. Introducing a pipeline with automated tests, Docker image builds, and staged rollout cut deployment time by 87% and eliminated the class of "works on dev, broken on prod" issues caused by environment drift.
+
+## What Leading the Team Taught Me
+
+Being promoted mid-project forced me to think about engineering as a system — not just the code, but the process that produces it. The 30% reduction in production bugs came directly from introducing mandatory code review and test coverage requirements. Before that, bugs were caught in production. After, they were caught in PRs. The process change had more impact than any individual technical fix.
+
+## Built With
+
+**Backend:** Flask, PostgreSQL, pandas (analytics)  
+**Frontend:** React, Material UI  
+**Infrastructure:** Docker, CI/CD pipeline

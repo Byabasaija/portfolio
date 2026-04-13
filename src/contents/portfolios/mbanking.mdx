@@ -1,0 +1,56 @@
+---
+title: "Mbanking"
+category: Systems Design
+startDate: 2025-08-01
+endDate: 2026-12-31
+publishedAt: 2026-04-12
+summary: "Fault-tolerant mobile banking platform for Ugandan SACCOs — hexagonal architecture to support multiple core banking systems, USSD entry point, and telecom integration via DmarkPay."
+tags:
+  - Python
+  - Django
+  - PostgreSQL
+  - USSD
+  - Hexagonal Architecture
+  - Fintech
+
+banner: /images/banner/projects/mbanking.svg
+alt: "Mbanking — Mobile SACCO Banking Platform"
+---
+
+Mbanking is a mobile banking platform built at DMARK Mobile for Ugandan SACCOs (savings and credit cooperatives). It exposes mobile money services — deposits, withdrawals, loans, and fund transfers — to SACCO members via a mobile app, USSD codes, and a web dashboard for monitoring and reporting. Currently serving 30+ SACCOs with 75,000+ monthly transactions.
+
+> Proprietary system — no public repository.
+
+## The Hard Problem: Every SACCO Runs Different Core Banking Software
+
+SACCOs in Uganda don't share infrastructure. Each one runs a different core banking system with a different data model, different API contracts, and different business rules for things like loan eligibility and account balance calculation. A naïve implementation would couple Mbanking to one core banking system, locking out every SACCO that runs something different.
+
+## Hexagonal Architecture as the Solution
+
+Mbanking uses hexagonal (ports and adapters) architecture to decouple the application core from any specific SACCO backend. The domain logic — transaction processing, balance checks, loan workflows — operates against abstract port interfaces. Each SACCO's core banking system gets its own adapter that translates between the port contract and that system's specific API.
+
+Adding support for a new core banking system means writing one new adapter. The domain logic, the mobile API, the USSD handler, and the web dashboard are untouched.
+
+## Multiple Entry Points, One Core
+
+Three distinct entry points hit the same domain layer:
+
+- **Mobile App API** — Django REST Framework, consumed by the SACCO member mobile application built by a separate team. Handles authentication, transaction submission, and balance queries.
+- **USSD Entry Point** — for SACCO members who don't have smartphones or data. A USSD session walks the member through a menu tree to deposit, withdraw, or check balance via a feature phone.
+- **Web Dashboard** — internal interface for SACCO administrators and DMARK operations to monitor transaction volumes, system health, and generate reports.
+
+The USSD path is deliberately simple — it needs to work on the most basic handsets with the least reliable connections, so it is stateless and menu-driven.
+
+## Telecom Integration via DmarkPay
+
+All mobile money operations (deposits, withdrawals, transfers) route through DmarkPay — DMARK's internal telecom abstraction layer that wraps both MTN Uganda and Airtel Uganda. Mbanking never speaks to a telecom directly. DmarkPay normalises the differences between the two networks and handles retry logic at the telecom boundary.
+
+## Observability
+
+Given that failures involve real money, observability was built in from the start: API request logging, transaction state tracking, SMS gateway health monitoring, and server resource metrics. When a transaction fails, there is a full audit trail from the incoming request to the telecom response.
+
+## Built With
+
+**Backend:** Django, Django REST Framework, PostgreSQL  
+**Infrastructure:** Docker, internal CI/CD  
+**Integrations:** DmarkPay (MTN Uganda, Airtel Uganda)

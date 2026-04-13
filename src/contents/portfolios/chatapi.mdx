@@ -1,0 +1,53 @@
+---
+title: "ChatAPI"
+category: Systems Design
+startDate: 2024-06-01
+endDate: 2025-12-31
+publishedAt: 2026-04-13
+summary: "Self-hosted chat infrastructure for AI-powered and human-in-the-loop applications. Single binary, WebSocket-native, webhook-driven bot pipeline."
+tags:
+  - Go
+  - WebSocket
+  - SQLite
+  - JWT
+  - Developer Tooling
+  - Open Source
+
+banner: /images/banner/projects/chatapi.svg
+alt: "ChatAPI — Self-hosted chat infrastructure"
+---
+
+ChatAPI is an open-source, self-hosted messaging backend designed for applications that need real-time chat, AI bot responses, and human handoff — without depending on a third-party service.
+
+<div align="center">
+  <strong>
+    <a href="https://github.com/getchatapi/chatapi">⭐ GitHub</a>
+  </strong>
+</div>
+
+## The Problem
+
+Most chat infrastructure is either a managed SaaS (Stream, Sendbird, Intercom) with per-seat pricing and data leaving your infrastructure, or a full messaging platform (Rocket.Chat, Matrix) that's far too heavy for embedding in an app. There was no simple, self-hosted option for developers who need WebSocket messaging with bot support and want to own the stack.
+
+## Architecture Decisions
+
+**Single binary deployment.** ChatAPI ships as a single Go binary with SQLite as the default store. No Docker Compose with five services, no Postgres requirement, no Redis dependency. You drop the binary, set a JWT secret, and it runs. This was a deliberate constraint — the target user is a developer who wants to embed chat in their app, not operate a messaging cluster.
+
+**WebSocket-native protocol.** All real-time communication happens over a persistent WebSocket connection. Clients authenticate by passing a JWT as a query parameter on the connection URL — the only way to pass credentials on a browser WebSocket without a custom handshake.
+
+**Webhook-driven bot pipeline.** Rather than embedding LLM logic inside ChatAPI, the bot pipeline is externalised via webhooks. Before each bot response, ChatAPI POSTs the conversation to a configured URL and expects a `system_prompt` back. This keeps ChatAPI decoupled from any specific LLM provider or retrieval strategy — the application owns the intelligence, ChatAPI owns the transport.
+
+**Human handoff via `skip: true`.** When a room is escalated to a human, the webhook returns `{ "skip": true }`. ChatAPI suppresses the bot response and leaves the channel open for a human to reply through the same WebSocket connection. The visitor sees no context switch — same room, same thread.
+
+**Token streaming.** Bot responses stream token-by-token via three event types: `message.stream.start`, `message.stream.delta`, `message.stream.end`. This lets clients render the familiar typewriter effect without polling.
+
+## What I Learned
+
+Building ChatAPI exposed real decisions that managed services hide: how to handle reconnect backoff without thundering herd, how to keep SQLite performant under concurrent writes, and where the boundary between transport and intelligence should sit. The webhook model in particular — separating retrieval and prompting from messaging — turned out to be the right abstraction for teams that want to swap LLM providers or retrieval strategies without touching the messaging layer.
+
+## Built With
+
+- Go
+- SQLite
+- JWT (HS256)
+- WebSocket (native, no framework)

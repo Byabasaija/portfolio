@@ -1,0 +1,78 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="1200" height="630" fill="#1a1a1a"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <text x="600" y="72" text-anchor="middle" fill="#e9c46a" font-size="13" font-weight="600" letter-spacing="3">MOBILE MONEY LENDING</text>
+  <text x="600" y="112" text-anchor="middle" fill="#e5e5e5" font-size="34" font-weight="700">QuickLoans — Credit + Disbursement</text>
+
+  <!-- Applicant -->
+  <rect x="60" y="240" width="130" height="60" rx="12" fill="#242424" stroke="#e9c46a" stroke-width="1.5"/>
+  <text x="125" y="265" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">Applicant</text>
+  <text x="125" y="283" text-anchor="middle" fill="#888" font-size="10">Mobile Money user</text>
+
+  <!-- Credit Scoring -->
+  <rect x="270" y="225" width="160" height="90" rx="12" fill="#1e2a1e" stroke="#5a9a6a" stroke-width="1.5"/>
+  <text x="350" y="255" text-anchor="middle" fill="#5a9a6a" font-size="12" font-weight="600">Credit Engine</text>
+  <text x="350" y="273" text-anchor="middle" fill="#e5e5e5" font-size="11">Score from history</text>
+  <text x="350" y="291" text-anchor="middle" fill="#888" font-size="10">Risk assessment</text>
+  <text x="350" y="307" text-anchor="middle" fill="#888" font-size="10">Eligibility check</text>
+  <line x1="190" y1="270" x2="270" y2="270" stroke="#e9c46a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="268,264 278,270 268,276" fill="#e9c46a"/>
+
+  <!-- QuickLoans Core -->
+  <rect x="510" y="215" width="170" height="110" rx="14" fill="#1e1e2a" stroke="#3a3a5a" stroke-width="2"/>
+  <text x="595" y="248" text-anchor="middle" fill="#6a7ae9" font-size="13" font-weight="700">QuickLoans</text>
+  <text x="595" y="268" text-anchor="middle" fill="#e5e5e5" font-size="11">Loan Management</text>
+  <text x="595" y="286" text-anchor="middle" fill="#888" font-size="10">Disbursement</text>
+  <text x="595" y="304" text-anchor="middle" fill="#888" font-size="10">Collections</text>
+  <text x="595" y="319" text-anchor="middle" fill="#888" font-size="10">Repayment schedules</text>
+  <line x1="430" y1="270" x2="510" y2="270" stroke="#5a9a6a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="508,264 518,270 508,276" fill="#5a9a6a"/>
+
+  <!-- Mobile Money disbursement -->
+  <rect x="770" y="190" width="150" height="55" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="845" y="213" text-anchor="middle" fill="#e5e5e5" font-size="11" font-weight="600">Disbursement</text>
+  <text x="845" y="231" text-anchor="middle" fill="#888" font-size="10">Mobile Money payout</text>
+
+  <!-- Collections -->
+  <rect x="770" y="265" width="150" height="55" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="845" y="288" text-anchor="middle" fill="#e5e5e5" font-size="11" font-weight="600">Collections</text>
+  <text x="845" y="306" text-anchor="middle" fill="#888" font-size="10">Automated deductions</text>
+
+  <!-- Reporting -->
+  <rect x="770" y="340" width="150" height="55" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="845" y="363" text-anchor="middle" fill="#e5e5e5" font-size="11" font-weight="600">Reporting</text>
+  <text x="845" y="381" text-anchor="middle" fill="#888" font-size="10">Portfolio analytics</text>
+
+  <line x1="680" y1="255" x2="770" y2="217" stroke="#6a7ae950" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="680" y1="268" x2="770" y2="292" stroke="#6a7ae950" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="680" y1="280" x2="770" y2="367" stroke="#6a7ae950" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- DmarkPay -->
+  <rect x="980" y="215" width="150" height="60" rx="10" fill="#1e1e2a" stroke="#3a3a5a" stroke-width="1.5"/>
+  <text x="1055" y="240" text-anchor="middle" fill="#6a7ae9" font-size="11" font-weight="600">DmarkPay</text>
+  <text x="1055" y="258" text-anchor="middle" fill="#888" font-size="10">Telecom infrastructure</text>
+  <line x1="920" y1="217" x2="980" y2="240" stroke="#6a7ae930" stroke-width="1"/>
+  <line x1="920" y1="292" x2="980" y2="250" stroke="#6a7ae930" stroke-width="1"/>
+
+  <!-- Stats -->
+  <rect x="160" y="470" width="200" height="65" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="260" y="496" text-anchor="middle" fill="#e9c46a" font-size="16" font-weight="700">Credit Scoring</text>
+  <text x="260" y="516" text-anchor="middle" fill="#888" font-size="11">History-based risk model</text>
+
+  <rect x="500" y="470" width="200" height="65" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="600" y="496" text-anchor="middle" fill="#e9c46a" font-size="16" font-weight="700">Instant Disburse</text>
+  <text x="600" y="516" text-anchor="middle" fill="#888" font-size="11">Mobile money payout</text>
+
+  <rect x="840" y="470" width="200" height="65" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="940" y="496" text-anchor="middle" fill="#e9c46a" font-size="16" font-weight="700">Auto Collections</text>
+  <text x="940" y="516" text-anchor="middle" fill="#888" font-size="11">Scheduled deductions</text>
+
+  <line x1="80" y1="560" x2="1120" y2="560" stroke="#ffffff08" stroke-width="1"/>
+  <text x="600" y="590" text-anchor="middle" fill="#444" font-size="12">byabasaija.com</text>
+</svg>

@@ -1,9 +1,9 @@
 ---
-title: "System Design of chaosctl — Chaos Engineering CLI"
-date: "2026-03-04"
-category: System Design
-coverImage: /images/banner/posts/chaosctl-system-image.png
-excerpt: "Explore the architectural design of chaosctl, a unified chaos engineering CLI inspired by Netflix's Simian Army but designed for universal application compatibility."
+title: "Designing a Chaos Engineering CLI from First Principles"
+publishedAt: "2026-03-04"
+category: Systems Design
+banner: /images/banner/posts/chaosctl-system-image.png
+summary: "What would it take to build a chaos engineering CLI that works across any stack — not just Kubernetes, not just Netflix-scale? A design exploration inspired by Simian Army."
 author:
   name: Pascal
   picture: "https://github.com/Byabasaija.png"

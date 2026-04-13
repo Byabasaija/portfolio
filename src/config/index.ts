@@ -30,9 +30,9 @@ import {
 
 const config: Config = {
   avatar: "/images/profile.jpeg",
-  title: "Pascal Byabasaija - Backend & Distributed Systems Engineer",
+  title: "Pascal Byabasaija - Backend Systems Engineer",
   description:
-    "Backend Engineer specializing in distributed systems and financial infrastructure. 5+ years building scalable APIs, payment integrations, and cloud-native platforms.",
+    "Backend Systems Engineer with 5+ years building high-availability infrastructure, distributed systems, and developer tooling across fintech, healthcare, and SaaS.",
   author: "Pascal Byabasaija",
   keywords: [
     "Pascal Byabasaija",
@@ -50,7 +50,7 @@ const config: Config = {
     siteName: "Pascal Byabasaija - Software Engineer",
     title: "Pascal Byabasaija - Software Engineer",
     description:
-      "I'm Pascal Byabasaija, a Software Engineer with 4+ years of success in Agile Development, Full-Stack Engineering, and Software Architecture.",
+      "I'm Pascal Byabasaija, a Backend Systems Engineer with 5+ years building high-availability infrastructure, distributed systems, and developer tooling.",
     images: [
       {
         url: "https://unsplash.com/photos/black-remote-control-on-red-table-6sAl6aQ4OWI",
@@ -124,7 +124,7 @@ const config: Config = {
     metadataBase: new URL("https://www.byabasaija.com"),
     title: "Pascal Byabasaija - Software Engineer",
     description:
-      "I'm Pascal Byabasaija, a Software Engineer with 4+ years of success in Agile Development, Full-Stack Engineering, and Software Architecture.",
+      "I'm Pascal Byabasaija, a Backend Systems Engineer with 5+ years building high-availability infrastructure, distributed systems, and developer tooling.",
     authors: [{ name: "Pascal Byabasaija" }],
     creator: "Pascal Byabasaija",
     keywords: [
@@ -138,9 +138,9 @@ const config: Config = {
       url: "https://pascalbyabasaija.vercel.app",
       type: "website",
       siteName: "Pascal Byabasaija - Software Engineer",
-      title: "Pascal Byabasaija - Software Engineer",
+      title: "Pascal Byabasaija - Backend Systems Engineer",
       description:
-        "I'm Pascal Byabasaija, a Software Engineer with 4+ years of success in Agile Development, Full-Stack Engineering, and Software Architecture.",
+        "I'm Pascal Byabasaija, a Backend Systems Engineer with 5+ years building high-availability infrastructure, distributed systems, and developer tooling.",
       images: [
         {
           url: "https://unsplash.com/photos/black-remote-control-on-red-table-6sAl6aQ4OWI",
@@ -153,9 +153,9 @@ const config: Config = {
     manifest: "/manifest.json",
     twitter: {
       card: "summary_large_image",
-      title: "Pascal Byabasaija - Software Engineer",
+      title: "Pascal Byabasaija - Backend Systems Engineer",
       description:
-        "I'm Pascal Byabasaija, a Software Engineer with 4+ years of success in Agile Development, Full-Stack Engineering, and Software Architecture.",
+        "I'm Pascal Byabasaija, a Backend Systems Engineer with 5+ years building high-availability infrastructure, distributed systems, and developer tooling.",
     
     },
     icons: {
@@ -179,15 +179,15 @@ const config: Config = {
     pronouns: "He/Him",
     githubUsername: "Byabasaija",
     introduction: `
-Backend Engineer specializing in **distributed systems and financial infrastructure**. 5+ years
-building scalable APIs, payment integrations, and cloud-native platforms. Currently building
-mobile banking infrastructure supporting **30+ SACCOs and 75k+ monthly transactions** via
-telecom integrations with MTN Uganda and Airtel Uganda.
+Backend Systems Engineer with 5+ years building **high-availability infrastructure** across
+fintech, healthcare, and developer tooling. Focused on systems that stay up under load,
+recover from failure, and scale without rewrites.
 
-Creator of **ChatAPI** and **ChaosCTL**, open-source developer tools demonstrating expertise
-in real-time messaging and chaos engineering. 🚀
+Currently building fault-tolerant mobile banking infrastructure supporting **30+ SACCOs and
+75k+ monthly transactions**. Creator of **ChatAPI**, an open-source self-hosted chat infrastructure
+for real-time and AI-powered applications. 🚀
 
-**Self-motivated, open-source creator, loves building things that scale 👨🏻‍💻**
+**Self-motivated, open-source builder, obsessed with systems that work in production 👨🏻‍💻**
     `,
     lifestyles: [
       
@@ -276,7 +276,7 @@ in real-time messaging and chaos engineering. 🚀
     },
     awardLeaderships: {
       icon: PiTrophy,
-      title: "Certifications & Achievements",
+      title: "Achievements",
       items: [
         {
           company: "DMARK Mobile Company",
@@ -322,16 +322,16 @@ in real-time messaging and chaos engineering. 🚀
           tasksMarkdown: `
 - Architected and operated a **fault-tolerant mobile banking transaction system** integrating
   with MTN Uganda and Airtel Uganda, supporting **30+ SACCOs and 75,000+ monthly transactions**.
+- Built internal **observability infrastructure** to monitor API traffic, server resources,
+  and SMS gateway health — providing operational visibility across the full transaction pipeline.
 - Engineered a **high-throughput bulk payment processing system** enabling automated mobile
   money payouts, processing **15,000+ monthly transactions** with fault-tolerant retry mechanisms.
-- Developed internal **observability infrastructure** to monitor API traffic, server resources,
-  and SMS gateway health, improving system reliability and operational visibility.
           `,
         },
         {
           company: "Dissimilar Media",
           location: "Remote, Nairobi, Kenya",
-          role: "Full-Stack Software Engineer",
+          role: "Backend Engineer",
           duration: "May 2024 – Present",
           tasksMarkdown: `
 - Drove **73.6% startup growth** by architecting Monetize 54, an African-focused digital
@@ -339,7 +339,7 @@ in real-time messaging and chaos engineering. 🚀
 - Integrated **PayPal payment gateway** with fraud detection, achieving 20% increase in
   successful transactions and 99.8% uptime.
 - Built **real-time messaging and notifications** system using WebSockets, supporting
-  200+ concurrent connections (inspiration for ChatAPI open-source project).
+  200+ concurrent connections.
 - Implemented **intelligent recommendation engine** and full-text search via Typesense,
   increasing platform engagement by 25%.
 - Optimized cloud infrastructure by **30%** through Docker containerization and strategic cloud migration.
@@ -348,19 +348,18 @@ in real-time messaging and chaos engineering. 🚀
         {
           company: "Mara Scientific",
           location: "Onsite, Kampala, Uganda",
-          role: "Project Lead & Full-Stack Developer",
+          role: "Backend Engineer → Project Lead",
           duration: "June 2021 – May 2024",
           tasksMarkdown: `
 - **Promoted to Project Lead** for Mpeke HMIS after 2+ years as developer,
-  leading a team of 6 developers.
+  leading a team of 6 engineers.
 - Accelerated feature delivery by **38%** and reduced production bugs by **30%**
-  through Agile implementation and code quality standards.
+  through mandatory code review, test coverage standards, and structured PR process.
 - Developed **10+ healthcare modules** using Flask, including patient management
   and inventory systems.
 - Architected **hybrid cloud/offline solution** for remote clinics, improving
   system accessibility by 40%.
-- Mentored 3 junior developers and established **CI/CD pipeline** reducing
-  deployment time from 2 hours to 15 minutes.
+- Established **CI/CD pipeline** reducing deployment time from 2 hours to 15 minutes.
           `,
         },
       ],
@@ -383,7 +382,7 @@ in real-time messaging and chaos engineering. 🚀
         sameAs: "https://www.ncu.edu.tw/",
       },
     ],
-    jobTitle: "Backend & Distributed Systems Engineer",
+    jobTitle: "Backend Systems Engineer",
     skills: "Backend Engineering, Distributed Systems, Payment Integrations, Go, Python, TypeScript, FastAPI, Django, Docker, AWS",
     image: "https://byabasaija.com/images/profile.jpeg",
     url: "https://byabasaija.com/",

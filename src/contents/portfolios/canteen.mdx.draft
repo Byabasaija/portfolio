@@ -1,0 +1,46 @@
+---
+title: "Canteen"
+category: Systems Design
+startDate: 2025-08-01
+endDate: 2026-12-31
+publishedAt: 2026-04-11
+summary: "Prepaid card platform for schools and institutions — Stanbic Bank Flexipay integration, physical card issuance, and near-offline POS processing that keeps working during peak hours."
+tags:
+  - Python
+  - Django
+  - PostgreSQL
+  - Flexipay
+  - POS Integration
+  - Fintech
+
+banner: /images/banner/projects/canteen.svg
+alt: "Canteen — Prepaid Card Platform"
+---
+
+Canteen is a sponsored prepaid card platform built at DMARK Mobile. Sponsors — parents, companies, or institutions — fund beneficiaries such as school students, who then use physical prepaid cards at POS terminals in canteens and school shops. The system integrates directly with Stanbic Bank's Flexipay infrastructure.
+
+> Proprietary system — no public repository.
+
+## How It Works
+
+A sponsor creates an account, adds beneficiaries, and funds them through a Flexipay wallet linked to their Stanbic Bank account. Beneficiaries receive a physical prepaid card — similar to an ATM card — which they tap or swipe at any POS terminal on the network to make purchases. The card balance is managed centrally and reconciled against transactions processed at each POS.
+
+## The Critical Constraint: Peak Hours
+
+The primary deployment is schools. At lunchtime, every student hits the canteen within a 30-minute window. If the POS terminals require a live connection to the central system for every transaction, a network hiccup at 12:30 means the entire canteen stops working with hundreds of students in the queue.
+
+Canteen prioritises **near-offline functionality during peak hours**. POS terminals operate against a locally cached state — card balances and spend limits are pushed down to the terminal at the start of the day and refreshed periodically. Transactions are processed locally and queued. When connectivity is restored, the system syncs the queue and reconciles against the central ledger, resolving any conflicts.
+
+## Payment Reconciliation
+
+Near-offline introduces a class of problem that online-only systems never face: what happens when a card is used at two POS terminals while one is offline? The reconciliation layer handles this — it applies transactions in timestamp order, flags any that would have exceeded the card balance, and generates a settlement report for review. Sponsors can see exactly where and when each card was used.
+
+## Flexipay Integration
+
+Stanbic's Flexipay API handles the bank-side of the funding flow: when a sponsor loads funds, the API deducts from their Flexipay wallet and credits the Canteen ledger. This means the system never holds funds directly — it holds a ledger position backed by the bank.
+
+## Built With
+
+**Backend:** Django, PostgreSQL  
+**Integrations:** Stanbic Bank Flexipay API  
+**Infrastructure:** Docker, internal CI/CD

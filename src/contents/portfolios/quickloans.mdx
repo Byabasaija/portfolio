@@ -1,0 +1,48 @@
+---
+title: "QuickLoans"
+category: Systems Design
+startDate: 2025-08-01
+endDate: 2026-12-31
+publishedAt: 2026-04-09
+summary: "Mobile money lending platform — credit scoring from transaction history, instant disbursement via DmarkPay, and automated loan collection."
+tags:
+  - Python
+  - Django
+  - PostgreSQL
+  - Mobile Money
+  - Credit Scoring
+  - Fintech
+
+banner: /images/banner/projects/quickloans.svg
+alt: "QuickLoans — Mobile Money Lending"
+---
+
+QuickLoans is a mobile lending platform built at DMARK Mobile that offers short-term loans disbursed directly to mobile money accounts. It builds a credit score from a user's mobile money transaction history, makes an instant eligibility decision, and handles the full loan lifecycle — application, disbursement, repayment tracking, and automated collection.
+
+> Proprietary system — no public repository.
+
+## Credit Scoring from Mobile Money History
+
+Traditional credit scoring requires a bank account history that most Ugandans don't have. QuickLoans uses mobile money transaction history instead — frequency of deposits and withdrawals, average account balance over time, repayment behaviour on previous loans, and activity patterns.
+
+This data is available for any active mobile money user, which significantly widens the addressable market beyond people with formal banking relationships. The scoring model produces a risk tier that determines loan eligibility, maximum loan amount, and interest rate.
+
+## Instant Disbursement
+
+Once approved, loans are disbursed immediately via DmarkPay to the applicant's mobile money wallet — MTN or Airtel depending on their number. The applicant requests a loan and receives the funds within the same session, with no manual approval step for standard loan amounts within their credit tier.
+
+## Automated Collections
+
+Loan repayment is scheduled and automated. On a due date, the system attempts to collect the repayment from the borrower's mobile money account via a debit instruction through DmarkPay. If the first attempt fails — insufficient balance — the system retries according to a schedule and escalates overdue accounts for manual follow-up.
+
+This removes the operational burden of manual collection calls for the majority of loans that repay normally, and surfaces only genuinely problematic accounts for human attention.
+
+## Loan Portfolio Reporting
+
+Administrators have a full view of the loan portfolio: disbursed amounts, repayment rates, overdue accounts by age, and collection success rates. This reporting feeds back into the credit scoring model — underperforming risk tiers can be tightened, successful tiers can be expanded.
+
+## Built With
+
+**Backend:** Django, PostgreSQL  
+**Integrations:** DmarkPay (MTN Uganda, Airtel Uganda)  
+**Infrastructure:** Docker, internal CI/CD

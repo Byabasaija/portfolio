@@ -1,0 +1,86 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="1200" height="630" fill="#1a1a1a"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <text x="600" y="72" text-anchor="middle" fill="#e9c46a" font-size="13" font-weight="600" letter-spacing="3">NEAR-OFFLINE POS INFRASTRUCTURE</text>
+  <text x="600" y="112" text-anchor="middle" fill="#e5e5e5" font-size="34" font-weight="700">Canteen — Prepaid Card Platform</text>
+
+  <!-- Sponsor -->
+  <rect x="60" y="200" width="130" height="60" rx="12" fill="#242424" stroke="#e9c46a" stroke-width="1.5"/>
+  <text x="125" y="226" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">Sponsor</text>
+  <text x="125" y="244" text-anchor="middle" fill="#888" font-size="10">Parent / Org</text>
+
+  <!-- Stanbic / Flexipay -->
+  <rect x="260" y="185" width="150" height="90" rx="12" fill="#1e1e2a" stroke="#3a3a5a" stroke-width="1.5"/>
+  <text x="335" y="218" text-anchor="middle" fill="#6a7ae9" font-size="12" font-weight="600">Flexipay</text>
+  <text x="335" y="236" text-anchor="middle" fill="#888" font-size="10">Stanbic Bank API</text>
+  <text x="335" y="254" text-anchor="middle" fill="#888" font-size="10">Wallet → Card Fund</text>
+  <line x1="190" y1="230" x2="260" y2="230" stroke="#e9c46a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="258,224 268,230 258,236" fill="#e9c46a"/>
+
+  <!-- Central System -->
+  <rect x="480" y="175" width="160" height="110" rx="14" fill="#1e2a1e" stroke="#5a9a6a" stroke-width="2"/>
+  <text x="560" y="210" text-anchor="middle" fill="#5a9a6a" font-size="12" font-weight="700">Canteen</text>
+  <text x="560" y="228" text-anchor="middle" fill="#e5e5e5" font-size="11">Card Management</text>
+  <text x="560" y="246" text-anchor="middle" fill="#888" font-size="10">Sponsor → Beneficiary</text>
+  <text x="560" y="264" text-anchor="middle" fill="#888" font-size="10">Reconciliation</text>
+  <line x1="410" y1="230" x2="480" y2="230" stroke="#6a7ae940" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="478,224 488,230 478,236" fill="#6a7ae9"/>
+
+  <!-- Physical Card -->
+  <rect x="480" y="320" width="160" height="55" rx="10" fill="#242424" stroke="#e9c46a" stroke-width="1.5"/>
+  <text x="560" y="346" text-anchor="middle" fill="#e9c46a" font-size="12" font-weight="600">Prepaid Card</text>
+  <text x="560" y="362" text-anchor="middle" fill="#888" font-size="10">Issued Physically</text>
+  <line x1="560" y1="285" x2="560" y2="320" stroke="#5a9a6a40" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- POS cluster -->
+  <rect x="730" y="160" width="130" height="55" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="795" y="183" text-anchor="middle" fill="#e5e5e5" font-size="11" font-weight="600">POS Terminal</text>
+  <text x="795" y="199" text-anchor="middle" fill="#888" font-size="10">Near-Offline Mode</text>
+
+  <rect x="730" y="230" width="130" height="55" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="795" y="253" text-anchor="middle" fill="#e5e5e5" font-size="11" font-weight="600">POS Terminal</text>
+  <text x="795" y="269" text-anchor="middle" fill="#888" font-size="10">Near-Offline Mode</text>
+
+  <rect x="730" y="300" width="130" height="55" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="795" y="323" text-anchor="middle" fill="#e5e5e5" font-size="11" font-weight="600">POS Terminal</text>
+  <text x="795" y="339" text-anchor="middle" fill="#888" font-size="10">Near-Offline Mode</text>
+
+  <line x1="640" y1="215" x2="730" y2="187" stroke="#5a9a6a40" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="640" y1="230" x2="730" y2="257" stroke="#5a9a6a40" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="640" y1="240" x2="730" y2="327" stroke="#5a9a6a40" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Sync arrow -->
+  <rect x="920" y="215" width="150" height="60" rx="10" fill="#1e2a1e" stroke="#3a5a3a" stroke-width="1.5"/>
+  <text x="995" y="240" text-anchor="middle" fill="#5a9a6a" font-size="11" font-weight="600">Sync + Reconcile</text>
+  <text x="995" y="258" text-anchor="middle" fill="#888" font-size="10">on connectivity</text>
+  <line x1="860" y1="245" x2="920" y2="245" stroke="#5a9a6a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="918,239 928,245 918,251" fill="#5a9a6a"/>
+
+  <!-- Beneficiary -->
+  <rect x="730" y="390" width="130" height="55" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="795" y="413" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">Student</text>
+  <text x="795" y="429" text-anchor="middle" fill="#888" font-size="10">Taps card at POS</text>
+  <line x1="560" y1="375" x2="795" y2="390" stroke="#e9c46a30" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Bottom stats -->
+  <rect x="200" y="480" width="200" height="65" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="300" y="506" text-anchor="middle" fill="#e9c46a" font-size="18" font-weight="700">Near-Offline</text>
+  <text x="300" y="526" text-anchor="middle" fill="#888" font-size="11">Peak hour resilience</text>
+
+  <rect x="500" y="480" width="200" height="65" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="600" y="506" text-anchor="middle" fill="#e9c46a" font-size="18" font-weight="700">Flexipay</text>
+  <text x="600" y="526" text-anchor="middle" fill="#888" font-size="11">Stanbic Bank integration</text>
+
+  <rect x="800" y="480" width="200" height="65" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="900" y="506" text-anchor="middle" fill="#e9c46a" font-size="18" font-weight="700">Prepaid Cards</text>
+  <text x="900" y="526" text-anchor="middle" fill="#888" font-size="11">Physical card issuance</text>
+
+  <line x1="80" y1="570" x2="1120" y2="570" stroke="#ffffff08" stroke-width="1"/>
+  <text x="600" y="600" text-anchor="middle" fill="#444" font-size="12">byabasaija.com</text>
+</svg>

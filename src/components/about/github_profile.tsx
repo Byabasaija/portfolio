@@ -25,14 +25,14 @@ export default function GitHubProfile() {
 
   return (
     <div className="max-w-full text-gray-100">
-      <h1 className="text-3xl font-bold mb-2">Hello, I'm Pascal Byabasaija 👋</h1>
+      <h1 className="text-3xl font-bold mb-2">I build backend systems that handle load, failure, and scale.</h1>
 
       <p className="text-light-gray mb-8">
-        Software Engineer who prioritizes —{" "}
+        Backend Systems Engineer who prioritizes —{" "}
         <span className="text-orange-yellow-crayola font-medium">reliability</span>,{" "}
         <span className="text-orange-yellow-crayola font-medium">scalability</span>,{" "}
         and{" "}
-        <span className="text-orange-yellow-crayola font-medium">maintainability</span>.
+        <span className="text-orange-yellow-crayola font-medium">fault tolerance</span>.
       </p>
 
       {/* GitHub Activity */}
@@ -73,7 +73,8 @@ export default function GitHubProfile() {
         </BlurFade>
         <ul className="list-disc pl-6 space-y-2 text-light-gray mt-4">
           <li>I build backend systems designed to survive — not just launch</li>
-          <li>Drawn to problems involving distributed state, event-driven architecture, and financial data</li>
+          <li>Drawn to problems involving distributed state, fault tolerance, and systems that fail gracefully</li>
+          <li>5+ years shipping production infrastructure across fintech, healthcare, and developer tooling</li>
         </ul>
       </section>
 

@@ -1,0 +1,82 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="1200" height="630" fill="#1a1a1a"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <text x="600" y="72" text-anchor="middle" fill="#e9c46a" font-size="13" font-weight="600" letter-spacing="3">HEXAGONAL ARCHITECTURE</text>
+  <text x="600" y="112" text-anchor="middle" fill="#e5e5e5" font-size="34" font-weight="700">Mbanking — Mobile SACCO Platform</text>
+
+  <!-- Center hexagon (core domain) -->
+  <polygon points="600,220 650,248 650,304 600,332 550,304 550,248" fill="#1e2a1e" stroke="#5a9a6a" stroke-width="2"/>
+  <text x="600" y="276" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="700">Core</text>
+  <text x="600" y="292" text-anchor="middle" fill="#888" font-size="10">Domain</text>
+
+  <!-- Left: USSD Port -->
+  <rect x="80" y="255" width="110" height="50" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="135" y="275" text-anchor="middle" fill="#e9c46a" font-size="11" font-weight="600">USSD</text>
+  <text x="135" y="291" text-anchor="middle" fill="#888" font-size="10">Entry Point</text>
+  <line x1="190" y1="280" x2="548" y2="280" stroke="#e9c46a40" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Left: Mobile App Port -->
+  <rect x="80" y="320" width="110" height="50" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="135" y="340" text-anchor="middle" fill="#e9c46a" font-size="11" font-weight="600">Mobile App</text>
+  <text x="135" y="356" text-anchor="middle" fill="#888" font-size="10">REST API</text>
+  <line x1="190" y1="345" x2="548" y2="295" stroke="#e9c46a40" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Left: Web Dashboard -->
+  <rect x="80" y="190" width="110" height="50" rx="10" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="135" y="210" text-anchor="middle" fill="#e9c46a" font-size="11" font-weight="600">Web Dashboard</text>
+  <text x="135" y="226" text-anchor="middle" fill="#888" font-size="10">Monitoring</text>
+  <line x1="190" y1="215" x2="548" y2="258" stroke="#e9c46a40" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Right: DmarkPay -->
+  <rect x="720" y="190" width="130" height="50" rx="10" fill="#1e1e2a" stroke="#3a3a5a" stroke-width="1.5"/>
+  <text x="785" y="210" text-anchor="middle" fill="#6a7ae9" font-size="11" font-weight="600">DmarkPay</text>
+  <text x="785" y="226" text-anchor="middle" fill="#888" font-size="10">Telecom Adapter</text>
+  <line x1="652" y1="258" x2="720" y2="215" stroke="#6a7ae940" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Right: MTN / Airtel -->
+  <rect x="880" y="165" width="100" height="40" rx="8" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="930" y="190" text-anchor="middle" fill="#e5e5e5" font-size="11">MTN Uganda</text>
+  <rect x="880" y="215" width="100" height="40" rx="8" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="930" y="240" text-anchor="middle" fill="#e5e5e5" font-size="11">Airtel Uganda</text>
+  <line x1="850" y1="205" x2="880" y2="185" stroke="#6a7ae930" stroke-width="1"/>
+  <line x1="850" y1="215" x2="880" y2="235" stroke="#6a7ae930" stroke-width="1"/>
+
+  <!-- Right: SACCO Adapters -->
+  <rect x="720" y="270" width="130" height="50" rx="10" fill="#1e2a1e" stroke="#3a5a3a" stroke-width="1.5"/>
+  <text x="785" y="290" text-anchor="middle" fill="#5a9a6a" font-size="11" font-weight="600">SACCO Adapters</text>
+  <text x="785" y="306" text-anchor="middle" fill="#888" font-size="10">Hexagonal Ports</text>
+  <line x1="652" y1="276" x2="720" y2="290" stroke="#5a9a6a40" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Right: Core Banking Systems -->
+  <rect x="880" y="260" width="100" height="30" rx="6" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="930" y="279" text-anchor="middle" fill="#888" font-size="10">Core Bank A</text>
+  <rect x="880" y="298" width="100" height="30" rx="6" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="930" y="317" text-anchor="middle" fill="#888" font-size="10">Core Bank B</text>
+  <rect x="880" y="336" width="100" height="30" rx="6" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="930" y="355" text-anchor="middle" fill="#888" font-size="10">Core Bank N</text>
+  <line x1="850" y1="290" x2="880" y2="275" stroke="#5a9a6a30" stroke-width="1"/>
+  <line x1="850" y1="295" x2="880" y2="313" stroke="#5a9a6a30" stroke-width="1"/>
+  <line x1="850" y1="300" x2="880" y2="351" stroke="#5a9a6a30" stroke-width="1"/>
+
+  <!-- Bottom stats -->
+  <rect x="220" y="430" width="180" height="70" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="310" y="458" text-anchor="middle" fill="#e9c46a" font-size="22" font-weight="700">30+</text>
+  <text x="310" y="478" text-anchor="middle" fill="#888" font-size="11">SACCOs Supported</text>
+
+  <rect x="510" y="430" width="180" height="70" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="600" y="458" text-anchor="middle" fill="#e9c46a" font-size="22" font-weight="700">75k+</text>
+  <text x="600" y="478" text-anchor="middle" fill="#888" font-size="11">Monthly Transactions</text>
+
+  <rect x="800" y="430" width="180" height="70" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="890" y="458" text-anchor="middle" fill="#e9c46a" font-size="22" font-weight="700">4</text>
+  <text x="890" y="478" text-anchor="middle" fill="#888" font-size="11">Entry Points</text>
+
+  <line x1="80" y1="560" x2="1120" y2="560" stroke="#ffffff08" stroke-width="1"/>
+  <text x="600" y="590" text-anchor="middle" fill="#444" font-size="12">byabasaija.com</text>
+</svg>

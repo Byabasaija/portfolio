@@ -1,0 +1,114 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="1200" height="630" fill="#1a1a1a"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <text x="600" y="68" text-anchor="middle" fill="#e9c46a" font-size="13" font-weight="600" letter-spacing="3">SELF-HOSTED CHAT INFRASTRUCTURE</text>
+  <text x="600" y="108" text-anchor="middle" fill="#e5e5e5" font-size="34" font-weight="700">ChatAPI — Single Binary Server</text>
+
+  <!-- ── ChatAPI Server (center) ── -->
+  <rect x="430" y="185" width="340" height="200" rx="18" fill="#1a1a1a" stroke="#e9c46a" stroke-width="2"/>
+  <!-- inner label -->
+  <text x="600" y="218" text-anchor="middle" fill="#e9c46a" font-size="11" font-weight="600" letter-spacing="2">CHATAPI SERVER</text>
+  <!-- divider -->
+  <line x1="450" y1="228" x2="750" y2="228" stroke="#e9c46a20" stroke-width="1"/>
+  <!-- modules -->
+  <rect x="450" y="238" width="88" height="36" rx="6" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="494" y="261" text-anchor="middle" fill="#e5e5e5" font-size="10">WebSocket</text>
+
+  <rect x="548" y="238" width="88" height="36" rx="6" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="592" y="261" text-anchor="middle" fill="#e5e5e5" font-size="10">JWT Auth</text>
+
+  <rect x="646" y="238" width="88" height="36" rx="6" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="690" y="261" text-anchor="middle" fill="#e5e5e5" font-size="10">Rooms API</text>
+
+  <rect x="450" y="284" width="88" height="36" rx="6" fill="#1e2a1e" stroke="#3a5a3a" stroke-width="1"/>
+  <text x="494" y="307" text-anchor="middle" fill="#5a9a6a" font-size="10">Bot Pipeline</text>
+
+  <rect x="548" y="284" width="88" height="36" rx="6" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="592" y="307" text-anchor="middle" fill="#e5e5e5" font-size="10">Streaming</text>
+
+  <rect x="646" y="284" width="88" height="36" rx="6" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="690" y="307" text-anchor="middle" fill="#e5e5e5" font-size="10">SQLite</text>
+
+  <!-- token streaming events -->
+  <text x="600" y="348" text-anchor="middle" fill="#888" font-size="10">stream.start  ·  stream.delta  ·  stream.end</text>
+
+  <!-- single binary badge -->
+  <rect x="490" y="358" width="220" height="18" rx="5" fill="#e9c46a15" stroke="#e9c46a30" stroke-width="1"/>
+  <text x="600" y="371" text-anchor="middle" fill="#e9c46a" font-size="10" letter-spacing="1">Single binary · No external dependencies</text>
+
+  <!-- ── Left: Client A (visitor) ── -->
+  <rect x="65" y="195" width="130" height="70" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <text x="130" y="222" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">Visitor</text>
+  <text x="130" y="240" text-anchor="middle" fill="#888" font-size="10">Browser client</text>
+  <text x="130" y="256" text-anchor="middle" fill="#888" font-size="10">wss://host/ws?token=</text>
+
+  <!-- ── Left: Client B (human / pascal) ── -->
+  <rect x="65" y="300" width="130" height="70" rx="12" fill="#242424" stroke="#e9c46a" stroke-width="1.5"/>
+  <text x="130" y="327" text-anchor="middle" fill="#e9c46a" font-size="12" font-weight="600">Human</text>
+  <text x="130" y="345" text-anchor="middle" fill="#888" font-size="10">Dashboard client</text>
+  <text x="130" y="361" text-anchor="middle" fill="#888" font-size="10">Same room, same ws</text>
+
+  <!-- ws arrows left -->
+  <line x1="195" y1="230" x2="430" y2="260" stroke="#e9c46a50" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="428,254 438,260 428,266" fill="#e9c46a50"/>
+  <line x1="195" y1="335" x2="430" y2="310" stroke="#e9c46a30" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="428,304 438,310 428,316" fill="#e9c46a30"/>
+
+  <!-- ── Right top: Webhook (your app) ── -->
+  <rect x="1005" y="175" width="145" height="80" rx="12" fill="#1e2a1e" stroke="#3a5a3a" stroke-width="1.5"/>
+  <text x="1077" y="204" text-anchor="middle" fill="#5a9a6a" font-size="12" font-weight="600">Your App</text>
+  <text x="1077" y="222" text-anchor="middle" fill="#e5e5e5" font-size="10">Webhook handler</text>
+  <text x="1077" y="238" text-anchor="middle" fill="#888" font-size="10">Returns system_prompt</text>
+
+  <!-- ── Right bottom: LLM ── -->
+  <rect x="1005" y="295" width="145" height="80" rx="12" fill="#1e1e2a" stroke="#3a3a5a" stroke-width="1.5"/>
+  <text x="1077" y="324" text-anchor="middle" fill="#6a7ae9" font-size="12" font-weight="600">LLM Provider</text>
+  <text x="1077" y="342" text-anchor="middle" fill="#888" font-size="10">OpenRouter / OpenAI</text>
+  <text x="1077" y="358" text-anchor="middle" fill="#888" font-size="10">Streams tokens back</text>
+
+  <!-- webhook flow arrows right -->
+  <!-- server → webhook -->
+  <line x1="770" y1="255" x2="1005" y2="215" stroke="#5a9a6a50" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="1003,209 1013,215 1003,221" fill="#5a9a6a50"/>
+  <text x="888" y="228" text-anchor="middle" fill="#5a9a6a60" font-size="10">POST bot.context</text>
+
+  <!-- webhook → server (system_prompt back) -->
+  <path d="M 1005 240 Q 940 260 770 278" fill="none" stroke="#5a9a6a30" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="772,272 762,278 772,284" fill="#5a9a6a30"/>
+  <text x="888" y="270" text-anchor="middle" fill="#5a9a6a40" font-size="10">{ system_prompt }</text>
+
+  <!-- server → LLM -->
+  <line x1="770" y1="310" x2="1005" y2="335" stroke="#6a7ae950" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="1003,329 1013,335 1003,341" fill="#6a7ae950"/>
+
+  <!-- LLM → server (stream) -->
+  <path d="M 1005 350 Q 940 360 770 345" fill="none" stroke="#6a7ae930" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="772,339 762,345 772,351" fill="#6a7ae930"/>
+  <text x="888" y="368" text-anchor="middle" fill="#6a7ae940" font-size="10">token stream</text>
+
+  <!-- skip: true label -->
+  <rect x="430" y="415" width="340" height="30" rx="8" fill="#1e1e1e" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="600" y="435" text-anchor="middle" fill="#888" font-size="10">Human handoff: webhook returns  <tspan fill="#e9c46a">{ skip: true }</tspan>  → bot silenced</text>
+
+  <!-- stats row -->
+  <rect x="130" y="490" width="180" height="60" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="220" y="516" text-anchor="middle" fill="#e9c46a" font-size="16" font-weight="700">Go Binary</text>
+  <text x="220" y="535" text-anchor="middle" fill="#888" font-size="11">Zero-dependency deploy</text>
+
+  <rect x="510" y="490" width="180" height="60" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="600" y="516" text-anchor="middle" fill="#e9c46a" font-size="16" font-weight="700">SQLite</text>
+  <text x="600" y="535" text-anchor="middle" fill="#888" font-size="11">Embedded storage</text>
+
+  <rect x="890" y="490" width="180" height="60" rx="12" fill="#242424" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="980" y="516" text-anchor="middle" fill="#e9c46a" font-size="16" font-weight="700">Open Source</text>
+  <text x="980" y="535" text-anchor="middle" fill="#888" font-size="11">github.com/getchatapi</text>
+
+  <line x1="80" y1="570" x2="1120" y2="570" stroke="#ffffff08" stroke-width="1"/>
+  <text x="600" y="598" text-anchor="middle" fill="#444" font-size="12">byabasaija.com</text>
+</svg>

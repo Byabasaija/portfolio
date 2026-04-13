@@ -1,0 +1,44 @@
+---
+title: "Impact Pay"
+category: Systems Design
+startDate: 2025-08-01
+endDate: 2026-12-31
+publishedAt: 2026-04-10
+summary: "Bulk mobile money disbursement and SMS platform for organisations — OVA wallet funding, fan-out payment engine, and Blasta SMS gateway integration."
+tags:
+  - Python
+  - Django
+  - PostgreSQL
+  - Mobile Money
+  - Bulk Payments
+  - SMS
+
+banner: /images/banner/projects/impactpay.svg
+alt: "Impact Pay — Organizational Bulk Payments"
+---
+
+Impact Pay is a bulk disbursement and communications platform built at DMARK Mobile for organisations that need to pay many people at once — payroll, grants, field worker stipends, and similar use cases. It combines mobile money fan-out with bulk SMS communications through a single interface.
+
+> Proprietary system — no public repository.
+
+## Two Products in One
+
+**Bulk Payments** — organisations load money onto an OVA (Organisation Virtual Account) wallet. They upload a recipient list — names and mobile money numbers — and trigger disbursement. Impact Pay fans out individual mobile money transfers to each recipient via the DmarkPay telecom infrastructure, tracks delivery status per recipient, and generates settlement reports.
+
+**Bulk SMS via Blasta** — the same upload-and-send model for communications. Organisations upload an audience list and compose a message. The system batches and dispatches through Blasta, DMARK's internal SMS gateway, and tracks delivery receipts.
+
+## The Engineering Problems
+
+**Fan-out at scale.** Disbursing to hundreds or thousands of recipients is not a single API call. Each recipient is an individual mobile money transaction that can succeed, fail, or time out independently. Impact Pay processes these as a job queue — each transaction is tracked individually, failures are retried with backoff, and the organisation sees per-recipient status rather than a single success/fail for the entire batch.
+
+**Idempotent disbursement.** If a disbursement job is interrupted — server restart, network failure, telecom timeout — it must resume without double-paying anyone already paid. Each transaction in a batch has a unique idempotency key derived from the job ID and recipient record, so replaying a batch never results in duplicate transfers.
+
+**OVA wallet integrity.** The wallet balance must always reflect the true available funds. Disbursements are reserved against the wallet before the fan-out begins — the organisation cannot initiate a second batch that exceeds the remaining balance while a first batch is in flight.
+
+**SMS delivery tracking.** Blasta delivers receipts asynchronously via webhook. Impact Pay correlates incoming receipts against the outbound batch and updates per-recipient delivery status, giving organisations a full view of which messages were delivered, pending, or failed.
+
+## Built With
+
+**Backend:** Django, PostgreSQL  
+**Integrations:** DmarkPay mobile money, Blasta SMS gateway  
+**Infrastructure:** Docker, internal CI/CD
