@@ -26,6 +26,7 @@ export default function ChatWidget() {
   const visitorIdRef = useRef<string | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const streamBufferRef = useRef<string>("");
+  const streamStartRef = useRef<number>(0);
 
   useEffect(() => {
     if (!open || clientRef.current) return;
@@ -54,6 +55,7 @@ export default function ChatWidget() {
 
         client.on("message.stream.start", (e) => {
           streamBufferRef.current = "";
+          streamStartRef.current = Date.now();
           setMessages((prev) => [
             ...prev,
             { id: e.message_id ?? crypto.randomUUID(), role: "bot", content: "", streaming: true },
@@ -69,10 +71,14 @@ export default function ChatWidget() {
         });
 
         client.on("message.stream.end", () => {
-          setMessages((prev) =>
-            prev.map((m) => (m.streaming ? { ...m, streaming: false } : m))
-          );
-          streamBufferRef.current = "";
+          const elapsed = Date.now() - streamStartRef.current;
+          const delay = Math.max(0, 600 - elapsed);
+          setTimeout(() => {
+            setMessages((prev) =>
+              prev.map((m) => (m.streaming ? { ...m, streaming: false } : m))
+            );
+            streamBufferRef.current = "";
+          }, delay);
         });
 
         setMessages([{
