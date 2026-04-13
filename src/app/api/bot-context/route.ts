@@ -1,6 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
 import { search } from "@/lib/search";
 
+const CHATAPI_URL = process.env.CHATAPI_URL!;
+const CHATAPI_JWT_SECRET = process.env.CHATAPI_JWT_SECRET!;
+const USER_ID = process.env.USER_ID!;
+
+async function isEscalated(roomId: string): Promise<boolean> {
+  try {
+    const { default: jwt } = await import("jsonwebtoken");
+    const token = jwt.sign({ sub: USER_ID }, CHATAPI_JWT_SECRET, {
+      algorithm: "HS256",
+      expiresIn: "1h",
+    });
+    const res = await fetch(`${CHATAPI_URL}/rooms/${roomId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!res.ok) return false;
+    const room = await res.json();
+    const meta = JSON.parse(room.metadata ?? "{}");
+    return meta.escalated === true;
+  } catch {
+    return false;
+  }
+}
+
 interface BotContextPayload {
   type: string;
   bot_id?: string;
@@ -29,11 +52,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "unexpected type" }, { status: 400 });
   }
 
-  console.log("[bot-context] incoming payload:", JSON.stringify(payload, null, 2));
+  // If a human has taken over, silence the bot
+  if (await isEscalated(payload.room_id)) {
+    return NextResponse.json({ skip: true });
+  }
 
   const query = payload.message.content;
   const results = search(query, 4);
-  console.log(`[bot-context] matched chunks:`, results.map(r => r.title));
 
   const context = results.length > 0
     ? results.map((r) => `[${r.title}]\n${r.text}`).join("\n\n")
@@ -45,6 +70,5 @@ Answer questions about Pascal using the context below. Be concise, friendly, and
 
 ${context ? `CONTEXT:\n${context}` : "No context found. Answer generally about Pascal Byabasaija, a backend software engineer."}`;
 
-  console.log("[bot-context] responding with system_prompt:\n", system_prompt);
   return NextResponse.json({ system_prompt });
 }

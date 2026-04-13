@@ -1,0 +1,112 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a1a1a"/>
+
+  <!-- Subtle grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Title -->
+  <text x="600" y="72" text-anchor="middle" fill="#e9c46a" font-size="15" font-weight="600" letter-spacing="3">RAG ARCHITECTURE</text>
+  <text x="600" y="118" text-anchor="middle" fill="#e5e5e5" font-size="36" font-weight="700">AI Chat Widget with BM25 Retrieval</text>
+
+  <!-- Connector lines -->
+  <!-- Visitor → ChatAPI -->
+  <line x1="198" y1="330" x2="282" y2="330" stroke="#e9c46a" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="280,324 292,330 280,336" fill="#e9c46a"/>
+
+  <!-- ChatAPI → Webhook -->
+  <line x1="418" y1="330" x2="502" y2="330" stroke="#e9c46a" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="500,324 512,330 500,336" fill="#e9c46a"/>
+
+  <!-- Webhook → BM25 -->
+  <line x1="638" y1="330" x2="722" y2="330" stroke="#e9c46a" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="720,324 732,330 720,336" fill="#e9c46a"/>
+
+  <!-- BM25 → LLM -->
+  <line x1="858" y1="330" x2="942" y2="330" stroke="#e9c46a" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="940,324 952,330 940,336" fill="#e9c46a"/>
+
+  <!-- Return arc: LLM back to Visitor (curved arrow below) -->
+  <path d="M 1002 390 Q 600 510 198 390" fill="none" stroke="#e9c46a40" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <polygon points="200,383 192,394 204,396" fill="#e9c46a40"/>
+  <text x="600" y="500" text-anchor="middle" fill="#e9c46a60" font-size="12" letter-spacing="1">streamed response</text>
+
+  <!-- ── Node 1: Visitor ── -->
+  <rect x="78" y="268" width="120" height="124" rx="16" fill="#242424" stroke="#e9c46a" stroke-width="1.5"/>
+  <!-- Chat bubble icon -->
+  <rect x="108" y="288" width="60" height="44" rx="8" fill="#e9c46a22" stroke="#e9c46a" stroke-width="1.5"/>
+  <circle cx="123" cy="310" r="3" fill="#e9c46a"/>
+  <circle cx="138" cy="310" r="3" fill="#e9c46a"/>
+  <circle cx="153" cy="310" r="3" fill="#e9c46a"/>
+  <polygon points="118,332 108,344 128,332" fill="#e9c46a22" stroke="#e9c46a" stroke-width="1.5"/>
+  <text x="138" y="368" text-anchor="middle" fill="#e5e5e5" font-size="13" font-weight="600">Visitor</text>
+  <text x="138" y="384" text-anchor="middle" fill="#888" font-size="11">WebSocket</text>
+
+  <!-- ── Node 2: ChatAPI ── -->
+  <rect x="298" y="268" width="120" height="124" rx="16" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <!-- Server icon -->
+  <rect x="328" y="286" width="60" height="16" rx="4" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+  <circle cx="380" cy="294" r="3" fill="#e9c46a"/>
+  <rect x="328" y="308" width="60" height="16" rx="4" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+  <circle cx="380" cy="316" r="3" fill="#5a9a6a"/>
+  <rect x="328" y="330" width="60" height="16" rx="4" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+  <circle cx="380" cy="338" r="3" fill="#555"/>
+  <text x="358" y="368" text-anchor="middle" fill="#e5e5e5" font-size="13" font-weight="600">ChatAPI</text>
+  <text x="358" y="384" text-anchor="middle" fill="#888" font-size="11">Messaging</text>
+
+  <!-- ── Node 3: Webhook ── -->
+  <rect x="518" y="268" width="120" height="124" rx="16" fill="#242424" stroke="#3a3a3a" stroke-width="1.5"/>
+  <!-- Code icon -->
+  <text x="578" y="322" text-anchor="middle" fill="#e9c46a" font-size="28" font-weight="300">&lt;/&gt;</text>
+  <text x="578" y="368" text-anchor="middle" fill="#e5e5e5" font-size="13" font-weight="600">Webhook</text>
+  <text x="578" y="384" text-anchor="middle" fill="#888" font-size="11">/api/bot-context</text>
+
+  <!-- ── Node 4: BM25 ── -->
+  <rect x="738" y="268" width="120" height="124" rx="16" fill="#1e2a1e" stroke="#3a5a3a" stroke-width="1.5"/>
+  <!-- Search / ranking bars icon -->
+  <rect x="763" y="334" width="10" height="24" rx="2" fill="#5a9a6a"/>
+  <rect x="779" y="322" width="10" height="36" rx="2" fill="#5a9a6a"/>
+  <rect x="795" y="314" width="10" height="44" rx="2" fill="#5a9a6a"/>
+  <rect x="811" y="326" width="10" height="32" rx="2" fill="#3a7a4a"/>
+  <!-- Magnifier -->
+  <circle cx="795" cy="300" r="10" fill="none" stroke="#5a9a6a" stroke-width="1.5"/>
+  <line x1="802" y1="307" x2="810" y2="315" stroke="#5a9a6a" stroke-width="2"/>
+  <text x="798" y="368" text-anchor="middle" fill="#e5e5e5" font-size="13" font-weight="600">BM25</text>
+  <text x="798" y="384" text-anchor="middle" fill="#888" font-size="11">Retrieval</text>
+
+  <!-- ── Node 5: LLM ── -->
+  <rect x="958" y="268" width="120" height="124" rx="16" fill="#1e1e2a" stroke="#3a3a5a" stroke-width="1.5"/>
+  <!-- Neural nodes -->
+  <circle cx="985" cy="295" r="5" fill="#6a7ae9" opacity="0.8"/>
+  <circle cx="985" cy="315" r="5" fill="#6a7ae9" opacity="0.8"/>
+  <circle cx="985" cy="335" r="5" fill="#6a7ae9" opacity="0.8"/>
+  <circle cx="1018" cy="305" r="5" fill="#8a6ae9" opacity="0.8"/>
+  <circle cx="1018" cy="325" r="5" fill="#8a6ae9" opacity="0.8"/>
+  <circle cx="1051" cy="315" r="6" fill="#e9c46a" opacity="0.9"/>
+  <line x1="990" y1="295" x2="1013" y2="305" stroke="#6a7ae940" stroke-width="1"/>
+  <line x1="990" y1="295" x2="1013" y2="325" stroke="#6a7ae940" stroke-width="1"/>
+  <line x1="990" y1="315" x2="1013" y2="305" stroke="#6a7ae940" stroke-width="1"/>
+  <line x1="990" y1="315" x2="1013" y2="325" stroke="#6a7ae940" stroke-width="1"/>
+  <line x1="990" y1="335" x2="1013" y2="305" stroke="#6a7ae940" stroke-width="1"/>
+  <line x1="990" y1="335" x2="1013" y2="325" stroke="#6a7ae940" stroke-width="1"/>
+  <line x1="1023" y1="305" x2="1045" y2="315" stroke="#8a6ae940" stroke-width="1"/>
+  <line x1="1023" y1="325" x2="1045" y2="315" stroke="#8a6ae940" stroke-width="1"/>
+  <text x="1018" y="368" text-anchor="middle" fill="#e5e5e5" font-size="13" font-weight="600">LLM</text>
+  <text x="1018" y="384" text-anchor="middle" fill="#888" font-size="11">Streaming</text>
+
+  <!-- Step labels -->
+  <text x="138" y="248" text-anchor="middle" fill="#e9c46a" font-size="11" letter-spacing="1">① CONNECT</text>
+  <text x="358" y="248" text-anchor="middle" fill="#888" font-size="11" letter-spacing="1">② ROUTE</text>
+  <text x="578" y="248" text-anchor="middle" fill="#888" font-size="11" letter-spacing="1">③ CONTEXT</text>
+  <text x="798" y="248" text-anchor="middle" fill="#5a9a6a" font-size="11" letter-spacing="1">④ RETRIEVE</text>
+  <text x="1018" y="248" text-anchor="middle" fill="#888" font-size="11" letter-spacing="1">⑤ GENERATE</text>
+
+  <!-- Footer -->
+  <line x1="80" y1="560" x2="1120" y2="560" stroke="#ffffff08" stroke-width="1"/>
+  <text x="600" y="590" text-anchor="middle" fill="#444" font-size="12">byabasaija.com</text>
+</svg>

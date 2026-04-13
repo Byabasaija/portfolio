@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChatAPI } from "@hastenr/chatapi-sdk";
+import { ChatAPISocket } from "@/lib/chatapi";
 import { LuMessageSquare, LuX, LuSend } from "react-icons/lu";
 
 interface Message {
@@ -21,13 +21,12 @@ export default function ChatWidget() {
   const [ready, setReady] = useState(false);
   const [escalated, setEscalated] = useState(false);
 
-  const clientRef = useRef<ChatAPI | null>(null);
+  const clientRef = useRef<ChatAPISocket | null>(null);
   const roomIdRef = useRef<string | null>(null);
   const visitorIdRef = useRef<string | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const streamBufferRef = useRef<string>("");
 
-  // Initialise on first open
   useEffect(() => {
     if (!open || clientRef.current) return;
 
@@ -40,18 +39,12 @@ export default function ChatWidget() {
         roomIdRef.current = room_id;
         visitorIdRef.current = visitor_id;
 
-        const client = new ChatAPI({ baseURL: CHATAPI_URL, token });
+        const client = new ChatAPISocket(CHATAPI_URL, token);
         clientRef.current = client;
 
-        try {
-          await client.connect();
-        } catch {
-          // SDK will retry automatically — suppress initial connection error
-          await new Promise((resolve) => setTimeout(resolve, 1000));
-        }
+        await client.connect();
 
-        // Incoming full messages (human replies from dashboard) — ignore own messages
-        client.on("message", (msg: any) => {
+        client.on("message", (msg) => {
           if (msg.sender_id === visitorIdRef.current) return;
           setMessages((prev) => [
             ...prev,
@@ -59,16 +52,15 @@ export default function ChatWidget() {
           ]);
         });
 
-        // Bot streaming
-        client.on("message.stream.start", (e: any) => {
+        client.on("message.stream.start", (e) => {
           streamBufferRef.current = "";
           setMessages((prev) => [
             ...prev,
-            { id: e.message_id ?? "stream", role: "bot", content: "", streaming: true },
+            { id: e.message_id ?? crypto.randomUUID(), role: "bot", content: "", streaming: true },
           ]);
         });
 
-        client.on("message.stream.delta", (e: any) => {
+        client.on("message.stream.delta", (e) => {
           streamBufferRef.current += e.delta ?? "";
           const buf = streamBufferRef.current;
           setMessages((prev) =>
@@ -83,13 +75,11 @@ export default function ChatWidget() {
           streamBufferRef.current = "";
         });
 
-        setMessages([
-          {
-            id: "welcome",
-            role: "bot",
-            content: "Hi! I'm Pascal's assistant. Ask me anything about his work, projects, or experience.",
-          },
-        ]);
+        setMessages([{
+          id: "welcome",
+          role: "bot",
+          content: "Hi! I'm Pascal's assistant. Ask me anything about his work, projects, or experience.",
+        }]);
         setReady(true);
       } catch (e) {
         console.error("Chat init failed", e);
@@ -97,9 +87,13 @@ export default function ChatWidget() {
         setLoading(false);
       }
     })();
+
+    return () => {
+      clientRef.current?.disconnect();
+      clientRef.current = null;
+    };
   }, [open]);
 
-  // Scroll to bottom on new messages
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -107,18 +101,12 @@ export default function ChatWidget() {
   const send = () => {
     const text = input.trim();
     if (!text || !clientRef.current || !roomIdRef.current) return;
-
     setInput("");
     setMessages((prev) => [
       ...prev,
       { id: crypto.randomUUID(), role: "user", content: text },
     ]);
-
-    try {
-      clientRef.current.sendMessage(roomIdRef.current, text);
-    } catch (e) {
-      console.error("Failed to send message", e);
-    }
+    clientRef.current.sendMessage(roomIdRef.current, text);
   };
 
   const handleKey = (e: React.KeyboardEvent) => {
@@ -128,27 +116,26 @@ export default function ChatWidget() {
     }
   };
 
-  const talkToPascal = () => {
+  const talkToPascal = async () => {
     if (!clientRef.current || !roomIdRef.current) return;
     setEscalated(true);
+
+    // Mark room as escalated so the bot stops responding
+    await fetch("/api/escalate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ room_id: roomIdRef.current }),
+    });
+
     setMessages((prev) => [
       ...prev,
-      {
-        id: crypto.randomUUID(),
-        role: "bot",
-        content: "Pascal has been notified and will get back to you shortly.",
-      },
+      { id: crypto.randomUUID(), role: "bot", content: "Pascal has been notified and will get back to you shortly." },
     ]);
-    try {
-      clientRef.current.sendMessage(roomIdRef.current, "I'd like to speak with Pascal directly.");
-    } catch (e) {
-      console.error("Failed to escalate", e);
-    }
+    clientRef.current.sendMessage(roomIdRef.current, "I'd like to speak with Pascal directly.");
   };
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* Chat window */}
       {open && (
         <div className="w-[340px] max-h-[520px] flex flex-col rounded-2xl shadow-shadow-5 bg-eerie-black-1 border border-white/5 overflow-hidden">
           {/* Header */}
@@ -171,13 +158,11 @@ export default function ChatWidget() {
             )}
             {messages.map((msg) => (
               <div key={msg.id} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-                <div
-                  className={`max-w-[80%] px-3 py-2 rounded-xl text-sm leading-relaxed ${
-                    msg.role === "user"
-                      ? "bg-orange-yellow-crayola text-smoky-black rounded-br-sm"
-                      : "bg-jet text-light-gray rounded-bl-sm"
-                  }`}
-                >
+                <div className={`max-w-[80%] px-3 py-2 rounded-xl text-sm leading-relaxed ${
+                  msg.role === "user"
+                    ? "bg-orange-yellow-crayola text-smoky-black rounded-br-sm"
+                    : "bg-jet text-light-gray rounded-bl-sm"
+                }`}>
                   {msg.content}
                   {msg.streaming && (
                     <span className="inline-block w-1.5 h-3.5 bg-light-gray-70 ml-0.5 animate-pulse rounded-sm" />
@@ -219,7 +204,6 @@ export default function ChatWidget() {
         </div>
       )}
 
-      {/* Toggle button */}
       <button
         onClick={() => setOpen((v) => !v)}
         className="w-12 h-12 rounded-full bg-orange-yellow-crayola text-smoky-black shadow-shadow-3 flex items-center justify-center hover:opacity-90 transition-opacity"
