@@ -1,26 +1,10 @@
 ---
 title: "I Built 6 ML Models to Predict Uganda Maize Prices. A Rolling Average Beat All of Them."
-date: "2025-06-15"
-category: Machine Learning
-coverImage: /images/banner/posts/maize-prices.jpg
-excerpt: "Six months of experiments across Random Forest, Prophet, CPI deflation, and East African market data. Here's what I actually learned."
-author:
-  name: Pascal
-  picture: "https://github.com/Byabasaija.png"
-tags:
-  - Machine Learning
-  - Agriculture
-  - East Africa
-  - Uganda
-  - Time Series
-  - Python
-  - FastAPI
 publishedAt: "2025-06-15"
-ogImage:
-  url: "/images/banner/posts/maize-prices.jpg"
-summary: "Six ML model variants, real production deployment, and a 3-line formula that beat everything. A honest account of building an agricultural price prediction API for East Africa."
-banner: /images/banner/posts/maize-prices.jpg
-alt: "Uganda maize prices ML project"
+category: Machine Learning
+summary: "Six model variants, real production deployment, and a 3-line formula that beat everything. A honest account of building an agricultural price prediction API for East Africa."
+banner: /images/banner/posts/maize-prices-model-comparison.png
+alt: "Uganda maize price prediction — model comparison chart showing naive baseline wins"
 mathjax: false
 ---
 
@@ -32,9 +16,9 @@ I wanted to build something useful: an API that predicts next month's maize pric
 
 ---
 
-![Owino market maize price 2010–2025](/images/banner/posts/maize-prices-timeline.png)
-
 ## The Setup
+
+![Owino market maize price 2010–2025](/images/banner/posts/maize-prices-timeline.png)
 
 **Data:** WFP food price monitoring data for Uganda, published monthly via HDX. 177 rows covering January 2010 to April 2025. One number per month: the retail price of maize per kilogram at Owino market, Kampala.
 
@@ -182,4 +166,4 @@ The code and all six notebooks are available on [GitHub](https://github.com/Byab
 
 ---
 
-*If you're working on agricultural ML in East Africa and hitting similar data walls, I'd like to compare notes. Find me on LinkedIn.*
+*If you're working on agricultural ML in East Africa and hitting similar data walls, I'd like to compare notes.*
