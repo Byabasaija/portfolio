@@ -1,6 +1,6 @@
 ---
 title: "I Built 6 ML Models to Predict Uganda Maize Prices. A Rolling Average Beat All of Them."
-publishedAt: "2025-06-15"
+publishedAt: "2026-06-15"
 category: Machine Learning
 summary: "Six model variants, real production deployment, and a 3-line formula that beat everything. A honest account of building an agricultural price prediction API for East Africa."
 banner: /images/banner/posts/maize-prices-model-comparison.png
