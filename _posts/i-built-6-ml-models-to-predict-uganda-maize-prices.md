@@ -24,11 +24,15 @@ alt: "Uganda maize prices ML project"
 mathjax: false
 ---
 
+![Uganda maize price prediction — model comparison](/images/banner/posts/maize-prices-model-comparison.png)
+
 Maize is Uganda's most consumed staple. At Owino market in Kampala — the country's largest informal market — prices swing by hundreds of shillings per kilogram between months. A farmer who plants in March doesn't know what he'll earn at harvest in July. A trader who buys in bulk in November is gambling on December prices.
 
 I wanted to build something useful: an API that predicts next month's maize price at Owino. What I got was a six-month education in why ML fails on short economic time series — and a finding that's more valuable than any model improvement.
 
 ---
+
+![Owino market maize price 2010–2025](/images/banner/posts/maize-prices-timeline.png)
 
 ## The Setup
 
@@ -135,6 +139,8 @@ Prophet fit an upward trend to 2017–2023 prices, then extrapolated that trend 
 The naive baseline wins. It always won.
 
 ---
+
+![Test period predictions: v6 vs naive baseline vs actual](/images/banner/posts/maize-prices-predictions.png)
 
 ## Why the Naive Baseline Wins
 
